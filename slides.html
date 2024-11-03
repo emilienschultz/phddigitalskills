@@ -1,0 +1,2233 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="slides_files/libs/clipboard/clipboard.min.js"></script>
+<script src="slides_files/libs/quarto-html/tabby.min.js"></script>
+<script src="slides_files/libs/quarto-html/popper.min.js"></script>
+<script src="slides_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="slides_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="slides_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="slides_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="slides_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.5.57">
+
+  <meta name="author" content="Émilien Schultz - Nicolas Chopin">
+  <title>Digital skills for PhD students</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="slides_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="slides_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #24292e;  }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #24292e; } /* Normal */
+    code span.al { color: #ff5555; font-weight: bold; } /* Alert */
+    code span.an { color: #6a737d; } /* Annotation */
+    code span.at { color: #d73a49; } /* Attribute */
+    code span.bn { color: #005cc5; } /* BaseN */
+    code span.bu { color: #d73a49; } /* BuiltIn */
+    code span.cf { color: #d73a49; } /* ControlFlow */
+    code span.ch { color: #032f62; } /* Char */
+    code span.cn { color: #005cc5; } /* Constant */
+    code span.co { color: #6a737d; } /* Comment */
+    code span.cv { color: #6a737d; } /* CommentVar */
+    code span.do { color: #6a737d; } /* Documentation */
+    code span.dt { color: #d73a49; } /* DataType */
+    code span.dv { color: #005cc5; } /* DecVal */
+    code span.er { color: #ff5555; text-decoration: underline; } /* Error */
+    code span.ex { color: #d73a49; font-weight: bold; } /* Extension */
+    code span.fl { color: #005cc5; } /* Float */
+    code span.fu { color: #6f42c1; } /* Function */
+    code span.im { color: #032f62; } /* Import */
+    code span.in { color: #6a737d; } /* Information */
+    code span.kw { color: #d73a49; } /* Keyword */
+    code span.op { color: #24292e; } /* Operator */
+    code span.ot { color: #6f42c1; } /* Other */
+    code span.pp { color: #d73a49; } /* Preprocessor */
+    code span.re { color: #6a737d; } /* RegionMarker */
+    code span.sc { color: #005cc5; } /* SpecialChar */
+    code span.ss { color: #032f62; } /* SpecialString */
+    code span.st { color: #032f62; } /* String */
+    code span.va { color: #e36209; } /* Variable */
+    code span.vs { color: #032f62; } /* VerbatimString */
+    code span.wa { color: #ff5555; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="slides_files/libs/revealjs/dist/theme/quarto.css">
+  <link href="slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="slides_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="slides_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+
+  .callout {
+    margin-top: 1em;
+    margin-bottom: 1em;  
+    border-radius: .25rem;
+  }
+
+  .callout.callout-style-simple { 
+    padding: 0em 0.5em;
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+    display: flex;
+  }
+
+  .callout.callout-style-default {
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+  }
+
+  .callout .callout-body-container {
+    flex-grow: 1;
+  }
+
+  .callout.callout-style-simple .callout-body {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-style-default .callout-body {
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-titled.callout-style-simple .callout-body {
+    margin-top: 0.2em;
+  }
+
+  .callout:not(.callout-titled) .callout-body {
+      display: flex;
+  }
+
+  .callout:not(.no-icon).callout-titled.callout-style-simple .callout-content {
+    padding-left: 1.6em;
+  }
+
+  .callout.callout-titled .callout-header {
+    padding-top: 0.2em;
+    margin-bottom: -0.2em;
+  }
+
+  .callout.callout-titled .callout-title  p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+    
+  .callout.callout-titled.callout-style-simple .callout-content  p {
+    margin-top: 0;
+  }
+
+  .callout.callout-titled.callout-style-default .callout-content  p {
+    margin-top: 0.7em;
+  }
+
+  .callout.callout-style-simple div.callout-title {
+    border-bottom: none;
+    font-size: .9rem;
+    font-weight: 600;
+    opacity: 75%;
+  }
+
+  .callout.callout-style-default  div.callout-title {
+    border-bottom: none;
+    font-weight: 600;
+    opacity: 85%;
+    font-size: 0.9rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-default div.callout-content {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-simple .callout-icon::before {
+    height: 1rem;
+    width: 1rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+  }
+
+  .callout.callout-style-default .callout-icon::before {
+    height: 0.9rem;
+    width: 0.9rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 0.9rem 0.9rem;
+  }
+
+  .callout-title {
+    display: flex
+  }
+    
+  .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  .callout.no-icon::before {
+    display: none !important;
+  }
+
+  .callout.callout-titled .callout-body > .callout-content > :last-child {
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
+  }
+
+  .callout.callout-titled .callout-icon::before {
+    margin-top: .5rem;
+    padding-right: .5rem;
+  }
+
+  .callout:not(.callout-titled) .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  /* Callout Types */
+
+  div.callout-note {
+    border-left-color: #4582ec !important;
+  }
+
+  div.callout-note .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEU0lEQVRYCcVXTWhcVRQ+586kSUMMxkyaElstCto2SIhitS5Ek8xUKV2poatCcVHtUlFQk8mbaaziwpWgglJwVaquitBOfhQXFlqlzSJpFSpIYyXNjBNiTCck7x2/8/LeNDOZxDuEkgOXe++553zfefee+/OYLOXFk3+1LLrRdiO81yNqZ6K9cG0P3MeFaMIQjXssE8Z1JzLO9ls20MBZX7oG8w9GxB0goaPrW5aNMp1yOZIa7Wv6o2ykpLtmAPs/vrG14Z+6d4jpbSKuhdcSyq9wGMPXjonwmESXrriLzFGOdDBLB8Y6MNYBu0dRokSygMA/mrun8MGFN3behm6VVAwg4WR3i6FvYK1T7MHo9BK7ydH+1uurECoouk5MPRyVSBrBHMYwVobG2aOXM07sWrn5qgB60rc6mcwIDJtQrnrEr44kmy+UO9r0u9O5/YbkS9juQckLed3DyW2XV/qWBBB3ptvI8EUY3I9p/67OW+g967TNr3Sotn3IuVlfMLVnsBwH4fsnebJvyGm5GeIUA3jljERmrv49SizPYuq+z7c2H/jlGC+Ghhupn/hcapqmcudB9jwJ/3jvnvu6vu5lVzF1fXyZuZZ7U8nRmVzytvT+H3kilYvH09mLWrQdwFSsFEsxFVs5fK7A0g8gMZjbif4ACpKbjv7gNGaD8bUrlk8x+KRflttr22JEMRUbTUwwDQScyzPgedQHZT0xnx7ujw2jfVfExwYHwOsDTjLdJ2ebmeQIlJ7neo41s/DrsL3kl+W2lWvAga0tR3zueGr6GL78M3ifH0rGXrBC2aAR8uYcIA5gwV8zIE8onoh8u0Fca/ciF7j1uOzEnqcIm59sEXoGc0+z6+H45V1CvAvHcD7THztu669cnp+L0okAeIc6zjbM/24LgGM1gZk7jnRu1aQWoU9sfUOuhrmtaPIO3YY1KLLWZaEO5TKUbMY5zx8W9UJ6elpLwKXbsaZ4EFl7B4bMtDv0iRipKoDQT2sNQI9b1utXFdYisi+wzZ/ri/1m7QfDgEuvgUUEIJPq3DhX/5DWNqIXDOweC2wvIR90Oq3lDpdMIgD2r0dXvGdsEW5H6x6HLRJYU7C69VefO1x8Gde1ZFSJLfWS1jbCnhtOPxmpfv2LXOA2Xk2tvnwKKPFuZ/oRmwBwqRQDcKNeVQkYcOjtWVBuM/JuYw5b6isojIkYxyYAFn5K7ZBF10fea52y8QltAg6jnMqNHFBmGkQ1j+U43HMi2xMar1Nv0zGsf1s8nUsmUtPOOrbFIR8bHFDMB5zL13Gmr/kGlCkUzedTzzmzsaJXhYawnA3UmARpiYj5ooJZiUoxFRtK3X6pgNPv+IZVPcnwbOl6f+aBaO1CNvPW9n9LmCp01nuSaTRF2YxHqZ8DYQT6WsXT+RD6eUztwYLZ8rM+rcPxamv1VQzFUkzFXvkiVrySGQgJNvXHJAxiU3/NwiC03rSf05VBaPtu/Z7/B8Yn/w7eguloAAAAAElFTkSuQmCC');
+  }
+
+  div.callout-note.callout-style-default .callout-title {
+    background-color: #dae6fb
+  }
+
+  div.callout-important {
+    border-left-color: #d9534f !important;
+  }
+
+  div.callout-important .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEKklEQVRYCcVXTWhcVRS+575MJym48A+hSRFr00ySRQhURRfd2HYjk2SSTokuBCkU2o0LoSKKraKIBTcuFCoidGFD08nkBzdREbpQ1EDNIv8qSGMFUboImMSZd4/f9zJv8ibJMC8xJQfO3HPPPef7zrvvvnvviIkpC9nsw0UttFunbUhpFzFtarSd6WJkStVMw5xyVqYTvkwfzuf/5FgtkVoB0729j1rjXwThS7Vio+Mo6DNnvLfahoZ+i/o32lULuJ3NNiz7q6+pyAUkJaFF6JwaM2lUJlV0MlnQn5aTRbEu0SEqHUa0A4AdiGuB1kFXRfVyg5d87+Dg4DL6m2TLAub60ilj7A1Ec4odSAc8X95sHh7+ZRPCFo6Fnp7HfU/fBng/hi10CjCnWnJjsxvDNxWw0NfV6Rv5GgP3I3jGWXumdTD/3cbEOP2ZbOZp69yniG3FQ9z1jD7bnBu9Fc2tKGC2q+uAJOQHBDRiZX1x36o7fWBs7J9ownbtO+n0/qWkvW7UPIfc37WgT6ZGR++EOJyeQDSb9UB+DZ1G6DdLDzyS+b/kBCYGsYgJbSQHuThGKRcw5xdeQf8YdNHsc6ePXrlSYMBuSIAFTGAtQo+VuALo4BX83N190NWZWbynBjhOHsmNfFWLeL6v+ynsA58zDvvAC8j5PkbOcXCMg2PZFk3q8MjI7WAG/Dp9AwP7jdGBOOQkAvlFUB+irtm16I1Zw9YBcpGTGXYmk3kQIC/Cds55l+iMI3jqhjAuaoe+am2Jw5GT3Nbz3CkE12NavmzN5+erJW7046n/CH1RO/RVa8lBLozXk9uqykkGAyRXLWlLv5jyp4RFsG5vGVzpDLnIjTWgnRy2Rr+tDKvRc7Y8AyZq10jj8DqXdnIRNtFZb+t/ZRtXcDiVnzpqx8mPcDWxgARUqx0W1QB9MeUZiNrV4qP+Ehc+BpNgATsTX8ozYKL2NtFYAHc84fG7ndxUPr+AR/iQSns7uSUufAymwDOb2+NjK27lEFocm/EE2WpyIy/Hi66MWuMKJn8RvxIcj87IM5Vh9663ziW36kR0HNenXuxmfaD8JC7tfKbrhFr7LiZCrMjrzTeGx+PmkosrkNzW94ObzwocJ7A1HokLolY+AvkTiD/q1H0cN48c5EL8Crkttsa/AXQVDmutfyku0E7jShx49XqV3MFK8IryDhYVbj7Sj2P2eBxwcXoe8T8idsKKPRcnZw1b+slFTubwUwhktrfnAt7J++jwQtLZcm3sr9LQrjRzz6cfMv9aLvgmnAGvpoaGLxM4mAEaLV7iAzQ3oU0IvD5x9ix3yF2RAAuYAOO2f7PEFWCXZ4C9Pb2UsgDeVnFSpbFK7/IWu7TPTvBqzbGdCHOJQSxiEjt6IyZmxQyEJHv6xyQsYk//moVFsN2zP6fRImjfq7/n/wFDguUQFNEwugAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-important.callout-style-default .callout-title {
+    background-color: #f7dddc
+  }
+
+  div.callout-warning {
+    border-left-color: #f0ad4e !important;
+  }
+
+  div.callout-warning .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAETklEQVRYCeVWW2gcVRg+58yaTUnizqbipZeX4uWhBEniBaoUX1Ioze52t7sRq6APio9V9MEaoWlVsFasRq0gltaAPuxms8lu0gcviE/FFOstVbSIxgcv6SU7EZqmdc7v9+9mJtNks51NTUH84ed889/PP+cmxP+d5FIbMJmNbpREu4WUkiTtCicKny0l1pIKmBzovF2S+hIJHX8iEu3hZJ5lNZGqyRrGSIQpq15AzF28jgpeY6yk6GVdrfFqdrD6Iw+QlB8g0YS2g7dyQmXM/IDhBhT0UCiRf59lfqmmDvzRt6kByV/m4JjtzuaujMUM2c5Z2d6JdKrRb3K2q6mA+oYVz8JnDdKPmmNthzkAk/lN63sYPgevrguc72aZX/L9C6x09GYyxBgCX4NlvyGUHOKELlm5rXeR1kchuChJt4SSwyddZRXgvwMGvYo4QSlk3/zkHD8UHxwVJA6zjZZqP8v8kK8OWLnIZtLyCAJagYC4rTGW/9Pqj92N/c+LUaAj27movwbi19tk/whRCIE7Q9vyI6yvRpftAKVTdUjOW40X3h5OXsKCdmFcx0xlLJoSuQngnrJe7Kcjm4OMq9FlC7CMmScQANuNvjfP3PjGXDBaUQmbp296S5L4DrpbrHN1T87ZVEZVCzg1FF0Ft+dKrlLukI+/c9ENo+TvlTDbYFvuKPtQ9+l052rXrgKoWkDAFnvh0wTOmYn8R5f4k/jN/fZiCM1tQx9jQQ4ANhqG4hiL0qIFTGViG9DKB7GYzgubnpofgYRwO+DFjh0Zin2m4b/97EDkXkc+f6xYAPX0KK2I/7fUQuwzuwo/L3AkcjugPNixC8cHf0FyPjWlItmLxWw4Ou9YsQCr5fijMGoD/zpdRy95HRysyXA74MWOnscpO4j2y3HAVisw85hX5+AFBRSHt4ShfLFkIMXTqyKFc46xdzQM6XbAi702a7sy04J0+feReMFKp5q9esYLCqAZYw/k14E/xcLLsFElaornTuJB0svMuJINy8xkIYuL+xPAlWRceH6+HX7THJ0djLUom46zREu7tTkxwmf/FdOZ/sh6Q8qvEAiHpm4PJ4a/doJe0gH1t+aHRgCzOvBvJedEK5OFE5jpm4AGP2a8Dxe3gGJ/pAutug9Gp6he92CsSsWBaEcxGx0FHytmIpuqGkOpldqNYQK8cSoXvd+xLxXADw0kf6UkJNFtdo5MOgaLjiQOQHcn+A6h5NuL2s0qsC2LOM75PcF3yr5STuBSAcGG+meA14K/CI21HcS4LBT6tv0QAh8Dr5l93AhZzG5ZJ4VxAqdZUEl9z7WJ4aN+svMvwHHL21UKTd1mqvChH7/Za5xzXBBKrUcB0TQ+Ulgkfbi/H/YT5EptrGzsEK7tR1B7ln9BBwckYfMiuSqklSznIuoIIOM42MQO+QnduCoFCI0bpkzjCjddHPN/F+2Yu+sd9bKNpVwHhbS3LluK/0zgfwD0xYI5dXuzlQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-warning.callout-style-default .callout-title {
+    background-color: #fcefdc
+  }
+
+  div.callout-tip {
+    border-left-color: #02b875 !important;
+  }
+
+  div.callout-tip .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAADr0lEQVRYCe1XTWgTQRj9ZjZV8a9SPIkKgj8I1bMHsUWrqYLVg4Ue6v9BwZOxSYsIerFao7UiUryIqJcqgtpimhbBXoSCVxUFe9CTiogUrUp2Pt+3aUI2u5vdNh4dmMzOzHvvezuz8xNFM0mjnbXaNu1MvFWRXkXEyE6aYOYJpdW4IXuA4r0fo8qqSMDBU0v1HJUgVieAXxzCsdE/YJTdFcVIZQNMyhruOMJKXYFoLfIfIvVIMWdsrd+Rpd86ZmyzzjJmLStqRn0v8lzkb4rVIXvnpScOJuAn2ACC65FkPzEdEy4TPWRLJ2h7z4cArXzzaOdKlbOvKKX25Wl00jSnrwVxAg3o4dRxhO13RBSdNvH0xSARv3adTXbBdTf64IWO2vH0LT+cv4GR1DJt+DUItaQogeBX/chhbTBxEiZ6gftlDNXTrvT7co4ub5A6gp9HIcHvzTa46OS5fBeP87Qm0fQkr4FsYgVQ7Qg+ZayaDg9jhg1GkWj8RG6lkeSacrrHgDaxdoBiZPg+NXV/KifMuB6//JmYH4CntVEHy/keA6x4h4CU5oFy8GzrBS18cLJMXcljAKB6INjWsRcuZBWVaS3GDrqB7rdapVIeA+isQ57Eev9eCqzqOa81CY05VLd6SamW2wA2H3SiTbnbSxmzfp7WtKZkqy4mdyAlGx7ennghYf8voqp9cLSgKdqNfa6RdRsAAkPwRuJZNbpByn+RrJi1RXTwdi8RQF6ymDwGMAtZ6TVE+4uoKh+MYkcLsT0Hk8eAienbiGdjJHZTpmNjlbFJNKDVAp2fJlYju6IreQxQ08UJDNYdoLSl6AadO+fFuCQqVMB1NJwPm69T04Wv5WhfcWyfXQB+wXRs1pt+nCknRa0LVzSA/2B+a9+zQJadb7IyyV24YAxKp2Jqs3emZTuNnKxsah+uabKbMk7CbTgJx/zIgQYErIeTKRQ9yD9wxVof5YolPHqaWo7TD6tJlh7jQnK5z2n3+fGdggIOx2kaa2YI9QWarc5Ce1ipNWMKeSG4DysFF52KBmTNMmn5HqCFkwy34rDg05gDwgH3bBi+sgFhN/e8QvRn8kbamCOhgrZ9GJhFDgfcMHzFb6BAtjKpFhzTjwv1KCVuxHvCbsSiEz4CANnj84cwHdFXAbAOJ4LTSAawGWFn5tDhLMYz6nWeU2wJfIhmIJBefcd/A5FWQWGgrWzyORZ3Q6HuV+Jf0Bj+BTX69fm1zWgK7By1YTXchFDORywnfQ7GpzOo6S+qECrsx2ifVQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-tip.callout-style-default .callout-title {
+    background-color: #ccf1e3
+  }
+
+  div.callout-caution {
+    border-left-color: #fd7e14 !important;
+  }
+
+  div.callout-caution .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAACV0lEQVRYCdVWzWoUQRCuqp2ICBLJXgITZL1EfQDBW/bkzUMUD7klD+ATSHBEfAIfQO+iXsWDxJsHL96EHAwhgzlkg8nBg25XWb0zIb0zs9muYYWkoKeru+vn664fBqElyZNuyh167NXJ8Ut8McjbmEraKHkd7uAnAFku+VWdb3reSmRV8PKSLfZ0Gjn3a6Xlcq9YGb6tADjn+lUfTXtVmaZ1KwBIvFI11rRXlWlatwIAAv2asaa9mlB9wwygiDX26qaw1yYPzFXg2N1GgG0FMF8Oj+VIx7E/03lHx8UhvYyNZLN7BwSPgekXXLribw7w5/c8EF+DBK5idvDVYtEEwMeYefjjLAdEyQ3M9nfOkgnPTEkYU+sxMq0BxNR6jExrAI31H1rzvLEfRIdgcv1XEdj6QTQAS2wtstEALLG1yEZ3QhH6oDX7ExBSFEkFINXH98NTrme5IOaaA7kIfiu2L8A3qhH9zRbukdCqdsA98TdElyeMe5BI8Rs2xHRIsoTSSVFfCFCWGPn9XHb4cdobRIWABNf0add9jakDjQJpJ1bTXOJXnnRXHRf+dNL1ZV1MBRCXhMbaHqGI1JkKIL7+i8uffuP6wVQAzO7+qVEbF6NbS0LJureYcWXUUhH66nLR5rYmva+2tjRFtojkM2aD76HEGAD3tPtKM309FJg5j/K682ywcWJ3PASCcycH/22u+Bh7Aa0ehM2Fu4z0SAE81HF9RkB21c5bEn4Dzw+/qNOyXr3DCTQDMBOdhi4nAgiFDGCinIa2owCEChUwD8qzd03PG+qdW/4fDzjUMcE1ZpIAAAAASUVORK5CYII=');
+  }
+
+  div.callout-caution.callout-style-default .callout-title {
+    background-color: #ffe5d0
+  }
+
+  </style>
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Digital skills for PhD students</h1>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Émilien Schultz - Nicolas Chopin 
+</div>
+</div>
+</div>
+
+</section>
+<section>
+<section id="forwords" class="title-slide slide level1 center">
+<h1>Forwords</h1>
+
+</section>
+<section id="who-are-we" class="slide level2">
+<h2>Who are we</h2>
+<ul>
+<li>Émilien Schultz
+<ul>
+<li>Data scientist/research facilitator at CREST</li>
+<li>emilien.schultz@ensae.fr</li>
+</ul></li>
+<li>Nicolas Chopin
+<ul>
+<li>Professor statistics at ENSAE</li>
+<li>nicolas.chopin@ensae.fr</li>
+</ul></li>
+</ul>
+</section>
+<section id="who-are-you" class="slide level2">
+<h2>Who are you</h2>
+<ul>
+<li>What is your disciplinary background ?</li>
+<li>What software are you using ?
+<ul>
+<li>Programming ? R ? Python ?</li>
+</ul></li>
+<li>Are you using CLI ?</li>
+<li>Are you using Git/Github ?</li>
+</ul>
+</section>
+<section id="general-goals" class="slide level2">
+<h2>General goals</h2>
+<ul class="task-list">
+<li><label><input type="checkbox">Lay fundational practices</label></li>
+<li><label><input type="checkbox">Aim for better practices in research</label></li>
+<li><label><input type="checkbox">Discuss about your practices</label></li>
+</ul>
+</section>
+<section id="steps" class="slide level2">
+<h2>3 steps</h2>
+<ol type="1">
+<li>Gentle introduction of command line interfaces (CLI) - <strong>1h</strong></li>
+<li>Code versioning, Git/Github, open science - <strong>1h30</strong></li>
+<li>Latex for scientific publishing - <strong>1h30</strong></li>
+</ol>
+<p>break at 16h - end around 18h</p>
+</section>
+<section id="no-prerequisite" class="slide level2">
+<h2>No prerequisite</h2>
+<ul>
+<li>Fundational knowledge</li>
+<li>Adequate for scripts/programming</li>
+<li><strong>Integrating best open source practices for research</strong></li>
+</ul>
+<p>Everything will be on the repository : https://github.com/emilienschultz/phddigitalskills</p>
+</section></section>
+<section>
+<section id="command-line-interface" class="title-slide slide level1 center">
+<h1>Command Line Interface</h1>
+
+</section>
+<section id="what-is-the-command-line-interface" class="slide level2">
+<h2>What is the command line interface ?</h2>
+<blockquote>
+<p>A command-line interface (CLI) is a means of interacting with a computer program by inputting lines of text called command-lines</p>
+</blockquote>
+<ul>
+<li>in the past, every computer</li>
+<li>now, mainly unix systems (linux, mac…)</li>
+</ul>
+</section>
+<section id="the-great-divide" class="slide level2">
+<h2>The great divide</h2>
+<p>2 different traditions/philosophies</p>
+<ul>
+<li>graphical user interface (GUI)
+<ul>
+<li>mouse + everything visible</li>
+<li>massive software</li>
+</ul></li>
+<li>command-line interface (CLI)
+<ul>
+<li>keyboard (text-based) + everything hidden</li>
+<li>one command per tool</li>
+</ul></li>
+</ul>
+<blockquote>
+<p>small, simple programs with clean interfaces can be combined to build larger systems</p>
+</blockquote>
+</section>
+<section id="why-do-i-have-to-care-about-cli" class="slide level2">
+<h2>Why do I have to care about CLI ?</h2>
+<ul>
+<li>To systematize complexe treatments
+<ul>
+<li>Access to scripting langages</li>
+</ul></li>
+<li>To be able to use different types of remote computer (high-performance computing)</li>
+<li>To mix it with scripts (Python, R)</li>
+<li>To use specific tools</li>
+<li>Combine existing tools into powerful pipelines</li>
+<li><span style="color:gray;">To be a better person</span></li>
+<li><span style="color:gray;">To impress your friends &amp; family</span></li>
+</ul>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+
+<img data-src="./img/nature.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="this-is-overtly-complicated" class="slide level2">
+<h2>This is overtly complicated</h2>
+<p>Yes, but it is structured by principles that are everywhere in programming and computing interfaces.</p>
+
+<img data-src="./img/matrix-cli.jpg" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<blockquote>
+<p>A lot has changed about how we program computers since those early days. The command line of the past was machine-first: little more than a REPL on top of a scripting platform. But as general-purpose interpreted languages have flourished, the role of the shell script has shrunk. Today’s command line is human-first: a text-based UI that affords access to all kinds of tools, systems and platforms. In the past, the editor was inside the terminal—today, the terminal is just as often a feature of the editor. And there’s been a proliferation of git-like multi-tool commands. Commands within commands, and high-level commands that perform entire workflows rather than atomic functions. [https://clig.dev/]</p>
+</blockquote>
+</section>
+<section id="small-examples" class="slide level2">
+<h2>Small examples</h2>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>search all files with a .r extension</strong></p>
+</div>
+<div class="callout-content">
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href=""></a><span class="fu">find</span> ~/Documents <span class="at">-type</span> f <span class="at">-name</span> <span class="st">"*.r"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>create a python virtual environnement, install a package and run a script</strong></p>
+</div>
+<div class="callout-content">
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href=""></a><span class="ex">conda</span> create <span class="at">-n</span> new_env python=3.8</span>
+<span id="cb2-2"><a href=""></a><span class="ex">pip</span> install pandas</span>
+<span id="cb2-3"><a href=""></a><span class="ex">python</span> script.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>connect to a remote computer with ssh</strong></p>
+</div>
+<div class="callout-content">
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href=""></a><span class="fu">ssh</span> <span class="at">-Y</span> eschultz@cca.in2p3.fr </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="you-dont-have-to-master-all-of-it" class="slide level2">
+<h2>You don’t have to master all of it</h2>
+<ul>
+<li>You will use only specific command</li>
+<li>And you can make different attemps : it is a <strong>dialogue</strong></li>
+</ul>
+
+<img data-src="./img/tar.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="to-clarify-a-point" class="slide level2">
+<h2>To clarify a point</h2>
+<ul>
+<li>CLI is a general philosophy</li>
+<li>Specific commands can be :
+<ul>
+<li>Build-in commands (Unix/linux)</li>
+<li>OS specific commands (Windows, Mac)</li>
+<li>Specific tools command (once installed)</li>
+</ul></li>
+</ul>
+<p>Using CLI mix general principles and some familiary with unix systems.</p>
+</section>
+<section id="first-the-console-terminal-shell" class="slide level2">
+<h2>First, the console / terminal / shell</h2>
+<p>It is a program that allows you to enter commands</p>
+<ul>
+<li>The place to type commands</li>
+<li>Available on unix systems (unix shell)
+<ul>
+<li>Different flavours : Bash<sup>1</sup>, Zsh</li>
+</ul></li>
+<li>Accessible in different environnement
+<ul>
+<li>Rstudio / Jupyter / …</li>
+<li>On Windows : <a href="https://learn.microsoft.com/en-us/windows/wsl/install">Windows Subsystem for Linux</a></li>
+</ul></li>
+</ul>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>the Bourne Again SHell — so-called because it’s derived from a shell written by Stephen Bourne</p></li></ol></aside></section>
+<section id="second-the-file-system" class="slide level2">
+<h2>Second, the file system</h2>
+<ul>
+<li>file/directry (folder)</li>
+<li>computer filesystem organiserd from a drive/root
+<ul>
+<li><code>/</code></li>
+<li><code>C:\</code></li>
+</ul></li>
+<li>The file system is a tree 🌲
+<ul>
+<li><strong>Absolute path</strong> : from the root</li>
+<li><strong>Relative path</strong> : from current location
+<ul>
+<li>Each software is running from somewhere : its current location <code>.</code></li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="first-commands" class="slide level2">
+<h2>First commands</h2>
+<ul>
+<li><code>pwd</code> : the current working directory</li>
+<li><code>ls</code> : list all the files in a folder</li>
+<li><code>cd</code> : change directory to a specific path</li>
+<li><code>mkdir</code> : create a folder (-p for nested)</li>
+<li><code>rm</code> : remove a file</li>
+<li><code>touch</code> : create an empty file</li>
+<li><code>cp</code> : copy a file</li>
+<li><code>mv</code> : move a file</li>
+</ul>
+</section>
+<section id="tips" class="slide level2">
+<h2>Tips</h2>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tab completion and up/down</strong></p>
+</div>
+<div class="callout-content">
+<p>Use tab to facilitate completion</p>
+</div>
+</div>
+</div>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>specific elements</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li><code>..</code> : parent folder</li>
+<li><code>~</code> : home</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="rights-to-access" class="slide level2">
+<h2>Rights to access</h2>
+<ul>
+<li><p>Each file/directory has specific access</p></li>
+<li><p>Your access is determined by your status</p></li>
+<li><p><code>ls -l</code> : owner, group, all</p></li>
+<li><p><code>sudo</code> to use root privileges</p></li>
+<li><p><code>chmod</code> to change permissions</p>
+<ul>
+<li><code>chmod 755 filename</code> : sets read/write/execute permissions.</li>
+</ul></li>
+</ul>
+</section>
+<section id="third-the-structure-of-the-commands" class="slide level2">
+<h2>Third, the structure of the commands</h2>
+<p>Commands have a global pattern</p>
+
+<img data-src="./img/shell_command_syntax.svg" class="r-stretch"><ul>
+<li>usally a command is a name</li>
+<li>with options indicated with flag (-o VALUE) or full name (-option VALUE)</li>
+<li>a man page <code>man command</code> or for tools an help : <code>command --help</code></li>
+<li>and different arguments</li>
+</ul>
+</section>
+<section id="lets-try" class="slide level2">
+<h2>Let’s try</h2>
+<ul>
+<li><strong>GENES</strong> has a datalab accessible with your ENSAE account : https://onyxia.lab.groupe-genes.fr/</li>
+<li>or <strong>INSEE</strong> datalab : https://www.onyxia.sh/</li>
+<li>or your computer</li>
+</ul>
+<p>Connect</p>
+<ul>
+<li>Go to mes services</li>
+<li>New service &gt; Jupyter-python</li>
+<li>In option, Git, add repository https://github.com/emilienschultz/phddigitalskills</li>
+<li>Launch the service</li>
+<li>Launch a terminal inside it</li>
+</ul>
+</section>
+<section id="exercises-1" class="slide level2">
+<h2>Exercises 1</h2>
+<div title="List all folders">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>List all folders</strong></p>
+</div>
+<div class="callout-content">
+
+</div>
+</div>
+</div>
+</div>
+<div title="Go to phddigitalskills folder / a folder">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Go to phddigitalskills folder / a folder</strong></p>
+</div>
+<div class="callout-content">
+
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>How to list the size of the files</strong></p>
+</div>
+<div class="callout-content">
+
+</div>
+</div>
+</div>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Create this filesystme</strong></p>
+</div>
+<div class="callout-content">
+<pre><code>2024-11-06/
+└── data
+   ├── processed
+   └── raw</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="corrections-1" class="slide level2">
+<h2>Corrections 1</h2>
+<div title="List all folders">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>List all folders</strong></p>
+</div>
+<div class="callout-content">
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href=""></a><span class="fu">ls</span> <span class="at">-la</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Go to phddigitalskills folder</strong></p>
+</div>
+<div class="callout-content">
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href=""></a><span class="bu">cd</span> phddigitalskills</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>How to list the size of the files</strong></p>
+</div>
+<div class="callout-content">
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href=""></a><span class="fu">ls</span> <span class="at">-l</span> <span class="at">--block-size</span><span class="op">=</span>M</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Create this filesystme</strong></p>
+</div>
+<div class="callout-content">
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href=""></a><span class="fu">mkdir</span> <span class="at">-p</span> 2024-11-06/data</span>
+<span id="cb8-2"><a href=""></a><span class="bu">cd</span> 2024-11-06/data</span>
+<span id="cb8-3"><a href=""></a><span class="fu">mkdir</span> processed</span>
+<span id="cb8-4"><a href=""></a><span class="fu">mkdir</span> raw</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="a-list-of-commands" class="slide level2">
+<h2>A list of commands</h2>
+<ul>
+<li><code>echo</code> : print text</li>
+<li><code>tail</code> and <code>head</code> : display the beginning / end of a file</li>
+<li><code>find</code>
+<ul>
+<li>Use * as a wildcard</li>
+</ul></li>
+<li><code>wc</code> : word count</li>
+<li><code>cat</code> : concatenate text then display</li>
+<li><code>sort</code> : sort</li>
+<li><code>grep</code> : contraction of ‘global/regular expression/print’</li>
+</ul>
+</section>
+<section id="each-tool-has-multiple-powers" class="slide level2">
+<h2>Each tool has multiple powers</h2>
+<blockquote>
+<p>grep‘s real power doesn’t come from its options, though; it comes from the fact that patterns can include wildcards. (The technical name for these is regular expressions, which is what the ’re’ in ‘grep’ stands for.)</p>
+</blockquote>
+</section>
+<section id="more" class="slide level2">
+<h2>More !</h2>
+<ul>
+<li><code>ps</code> : see current processes</li>
+<li><code>kill</code>: kill a process</li>
+<li><code>df</code>: see disk space</li>
+<li><code>du</code>: disk usage
+<ul>
+<li><code>du -sh *</code>: see disk usage of all files</li>
+</ul></li>
+<li><code>vim</code> or <code>nano</code> : edit text files</li>
+<li><code>curl</code> : download files</li>
+</ul>
+</section>
+<section id="from-one-to-multiple-commands-the-pipe" class="slide level2">
+<h2>From one to multiple commands : the pipe</h2>
+<ul>
+<li>output on files <code>&gt;</code> (w) and <code>&gt;&gt;</code> (a)</li>
+<li>pipe <code>|</code></li>
+</ul>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Variables</strong></p>
+</div>
+<div class="callout-content">
+<p><code>$HOME</code>, <code>$PATH</code></p>
+</div>
+</div>
+</div>
+</section>
+<section id="beyond" class="slide level2">
+<h2>Beyond …</h2>
+<ul>
+<li>Modify file content (regex) with <code>sed</code></li>
+<li>Possibility to do loops, conditions</li>
+<li>Write complete scripts
+<ul>
+<li><code>bash script.sh</code></li>
+</ul></li>
+</ul>
+<pre><code>for filename in *.png
+do
+    cp $filename xkcd-$filename
+done</code></pre>
+</section>
+<section id="exercises-2" class="slide level2">
+<h2>Exercises 2</h2>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Download the file with the command in the README</strong></p>
+</div>
+<div class="callout-content">
+<p>curl -L -o img.zip “https://www.dropbox.com/scl/fi/mv6ex82vws3i5ljn3ck6g/img.zip?rlkey=l7w4hgazna4bf0lfahrzuoyn2&amp;st=j76lm525&amp;dl=1”</p>
+</div>
+</div>
+</div>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Unzip the data</strong></p>
+</div>
+<div class="callout-content">
+
+</div>
+</div>
+</div>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Find all files that mention your discipline</strong></p>
+</div>
+<div class="callout-content">
+
+</div>
+</div>
+</div>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>How many strips mention “science” ?</strong></p>
+</div>
+<div class="callout-content">
+
+</div>
+</div>
+</div>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Get the line in the jsonl file for a picture with grep</strong></p>
+</div>
+<div class="callout-content">
+
+</div>
+</div>
+</div>
+</section>
+<section id="corrections-2" class="slide level2">
+<h2>Corrections 2</h2>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Unzip the data</strong></p>
+</div>
+<div class="callout-content">
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href=""></a><span class="fu">unzip</span> img.zip</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Find all files that mention your discipline</strong></p>
+</div>
+<div class="callout-content">
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href=""></a><span class="fu">find</span> img <span class="at">-name</span> <span class="st">"*sociology*"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Get the line in the jsonl file for a picture with frep</strong></p>
+</div>
+<div class="callout-content">
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href=""></a><span class="fu">grep</span> <span class="va">$NAME</span> dataset/<span class="pp">*</span>.jsonl</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>How many strips mention “science”</strong></p>
+</div>
+<div class="callout-content">
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href=""></a><span class="fu">grep</span> <span class="at">-i</span> science dataset.jsonl <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="install-linux-tool" class="slide level2">
+<h2>Install linux tool</h2>
+<ul>
+<li>A lot of tools are software you need to install</li>
+<li>Each OS has a package manager
+<ul>
+<li>Debian : apt-get</li>
+<li>macOS : brew</li>
+<li>Windows : choco</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href=""></a><span class="fu">sudo</span> apt-get update</span>
+<span id="cb14-2"><a href=""></a><span class="fu">sudo</span> apt-get install XXXX</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="exercises-3" class="slide level2">
+<h2>Exercises 3</h2>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Transform a set of pictures in a pdf (for instance, all which have science in the name)</strong></p>
+</div>
+<div class="callout-content">
+<p>Look for a CLI tool and install it</p>
+</div>
+</div>
+</div>
+</section>
+<section id="corrections" class="slide level2">
+<h2>Corrections</h2>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Transform a set of pictures in a pdf</strong></p>
+</div>
+<div class="callout-content">
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href=""></a><span class="fu">sudo</span> apt-get update</span>
+<span id="cb15-2"><a href=""></a><span class="fu">sudo</span> apt-get install imagemagick</span>
+<span id="cb15-3"><a href=""></a><span class="ex">convert</span> <span class="pp">*</span>science<span class="pp">*</span>.png output.pdf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="powerful-tools-exist" class="slide level2">
+<h2>Powerful tools exist</h2>
+<p>For instance, <strong>xan</strong> https://github.com/medialab/xan</p>
+<blockquote>
+<p>xan is a command line tool that can be used to process CSV files directly from the shell. It has been written in Rust to be as performant as possible and can easily handle very large CSV files (Gigabytes). It is also able to leverage parallelism (through multithreading) to make some tasks complete as fast as your computer can allow. It can easily preview, filter, slice, aggregate, sort, join CSV files, and exposes a large collection of composable commands that can be chained together to perform a wide variety of typical tasks.</p>
+</blockquote>
+</section>
+<section id="ressources" class="slide level2">
+<h2>Ressources</h2>
+<ul>
+<li>Perkel, Jeffrey M. «&nbsp;Five Reasons Why Researchers Should Learn to Love the Command Line&nbsp;». Nature 590, nᵒ 7844 (4 février 2021): 173‑74. https://doi.org/10.1038/d41586-021-00263-0.</li>
+<li><a href="https://swcarpentry.github.io/shell-novice/01-intro.html">The Unix Shell from Software Carpentry</a></li>
+<li><a href="https://clig.dev/">Command Line Interface Guidelines</a></li>
+<li><a href="https://ubuntu.com/tutorials/command-line-for-beginners#1-overview">The Linux Command line for beginners</a></li>
+</ul>
+</section></section>
+<section>
+<section id="learning-from-open-source-practices-to-improve-open-science-introduction-to-code-versioning-tools-git-github" class="title-slide slide level1 center">
+<h1>Learning from open-source practices to improve open science: introduction to code versioning tools (Git &amp; Github)</h1>
+
+</section>
+<section id="in-a-nutshell" class="slide level2">
+<h2>In a nutshell</h2>
+<ul>
+<li>Scientific programming can be messy</li>
+<li>There is stuff to learn from open source community</li>
+<li>Foster open science and reproducibility</li>
+</ul>
+<div title="Scientific programming">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Scientific programming</strong></p>
+</div>
+<div class="callout-content">
+<p>All the practices involving code</p>
+<ul>
+<li>solitary (you and your computer)</li>
+<li>collaboratively (with colleagues)</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="goals-for-this-part" class="slide level2">
+<h2>Goals for this part</h2>
+<ul>
+<li>Some best practices for scientific programming</li>
+<li>Getting familiar with Git/GitHub</li>
+<li>Starting the structure of a project</li>
+<li>Available resources</li>
+</ul>
+<p><em>This session will be language agnostique</em></p>
+<div title="You don't have to know everything">
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>You don’t have to know everything</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>There are numerous tutorials</li>
+<li>The general philosophy comes first</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="code-text-versions" class="slide level2">
+<h2>Code &amp; text versions</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./img/finalfinal.png" class="quarto-figure quarto-figure-center" height="700"></p>
+</figure>
+</div>
+</section>
+<section id="rule-1-structuring-a-project" class="slide level2">
+<h2>Rule 1 : Structuring a Project</h2>
+<ul>
+<li>Separate code from data
+<ul>
+<li>Different logic</li>
+<li>Different tools</li>
+</ul></li>
+<li>Document / Comment your productions
+<ul>
+<li>Be explicit (variables, document file)</li>
+<li><em>Yes, it is boring, but useful</em></li>
+</ul></li>
+<li>Modularize : create distinct elements
+<ul>
+<li>One file per element</li>
+<li>Function rather than repeating code</li>
+</ul></li>
+</ul>
+</section>
+<section id="rule-2-a-common-file-system" class="slide level2">
+<h2>Rule 2 : a common file system</h2>
+<ul>
+<li>Organize your project
+<ul>
+<li><strong>data</strong> in a data directory</li>
+<li><strong>scripts</strong> in a script directory</li>
+<li><em>what else ?</em></li>
+</ul></li>
+<li>Create a common place to store it</li>
+</ul>
+</section>
+<section id="rule-3-adopt-code-versionning" class="slide level2">
+<h2>Rule 3 : adopt code versionning</h2>
+<p>Use dedicated tools to manage collaboration with data</p>
+<ul>
+<li>keep the history</li>
+<li>experiment without fear</li>
+<li>back and forth between many different versions</li>
+<li>work together</li>
+</ul>
+</section></section>
+<section>
+<section id="next-step-code-versionning" class="title-slide slide level1 center">
+<h1>Next step : code versionning</h1>
+
+</section>
+<section id="what-is-code-versionning" class="slide level2">
+<h2>What is code versionning ?</h2>
+<ul>
+<li><em>Option 1</em> : there is only one document and you send each version by email
+<ul>
+<li>slow and a lots of version</li>
+</ul></li>
+<li><em>Option 2</em> : there is only one document online on the cloud and you work on it
+<ul>
+<li>difficulty to keep track of the versions</li>
+<li>can be chaos with multiple contributors</li>
+</ul></li>
+<li><em>Option 3</em> : each contribution is clearly identified in a distributed file system with clear rules of modification and a tracking of versions</li>
+</ul>
+<p><strong>Entering Git &amp; Github</strong></p>
+</section>
+<section id="code-versioning-is-old" class="slide level2">
+<h2>Code versioning is old</h2>
+<ul>
+<li>Tools like RCS, CVS, or Subversion around since the early 1980s
+<ul>
+<li>Some readings : <a href="https://journals.openedition.org/sdt/33283">Industrial public goods: A genesis of the insertion of free software in Silicon Valley, Gabriel Alcaras, Sociologie du travail, 2020</a></li>
+</ul></li>
+<li>Leading the way to distributed tools</li>
+</ul>
+<p><strong>Somehow, it is a meta file organisation that keeps track of contributions and force you to (some) good practices</strong></p>
+</section>
+<section id="git-and-the-linux-history" class="slide level2">
+<h2>Git and the Linux history</h2>
+<ul>
+<li>An history born from the free software movement</li>
+<li><a href="https://en.wikipedia.org/wiki/The_Cathedral_and_the_Bazaar">The “bazar” of contribution</a>
+<ul>
+<li>No vertical integration</li>
+</ul></li>
+<li>Linux Torvald benevolent dictator
+<ul>
+<li><a href="https://blog.brachiosoft.com/en/posts/git/">Obligatory point of passage</a></li>
+</ul></li>
+<li>The big question :
+<ul>
+<li>How to collabore efficiently</li>
+</ul></li>
+</ul>
+</section>
+<section id="git" class="slide level2">
+<h2>Git</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./img/gitxkcd.png" class="quarto-figure quarto-figure-center" height="700"></p>
+</figure>
+</div>
+<p><a href="https://xkcd.com/1597/">Credits : xkcd</a></p>
+</section>
+<section id="how-does-it-work" class="slide level2">
+<h2>How does it work</h2>
+<ul>
+<li>A base unit : the repository containing everything</li>
+<li>A network of contribution with a unique id
+<ul>
+<li>Everything intermediate version saved</li>
+</ul></li>
+<li>Different parallel branches</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./img/branches.png" height="400"></p>
+<figcaption><a href="https://lutece.paris.fr/support/jsp/site/Portal.jsp?page=wiki&amp;view=page&amp;page_name=git&amp;language=fr">Source : Lutece.paris.fr</a></figcaption>
+</figure>
+</div>
+<p><strong>A world in itself…</strong></p>
+</section>
+<section id="what-is-git-exactly" class="slide level2">
+<h2>What is Git exactly ?</h2>
+<p>Git is a <strong>command line tool</strong> which allows to :</p>
+<ul>
+<li>record snapshots</li>
+<li>manage changes (back, forward, fusions)</li>
+<li>natively installed on unix systems</li>
+<li>manage the relation between different repositories</li>
+</ul>
+<p>Over time</p>
+<ul>
+<li>embedded in other tools</li>
+<li>became an infrastructure of programming practices &amp; OS</li>
+</ul>
+<pre><code>$ git</code></pre>
+</section>
+<section id="workflow" class="slide level2">
+<h2>Workflow</h2>
+<p>A file in a repo can be:</p>
+<ol type="1">
+<li>Untracked: the git repo does not include it in commits, save any changes, etc. Default state for new files</li>
+<li>Unmodified: tracked files that have not been modified since the version stored in the last commit</li>
+<li>Modified: tracked files that have been modified since the version stored in the last commit</li>
+<li>Staged: the changes made at the time you added the file (but not newer changes since then) will be included in the next commit</li>
+</ol>
+</section>
+<section id="section-2" class="slide level2">
+<h2></h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./img/git-committing.svg" class="quarto-figure quarto-figure-center" height="600"></p>
+</figure>
+</div>
+</section>
+<section id="small-demo-with-the-slides" class="slide level2">
+<h2>Small demo with the slides</h2>
+<ul>
+<li><a href="https://swcarpentry.github.io/git-novice/02-setup.html">First configure git</a></li>
+<li>Then, initializing a git repo (CLI is useful)
+<ul>
+<li><code>git init</code> =&gt; a .git directory</li>
+<li><code>git status</code></li>
+<li><code>git add FILE</code> =&gt; staging area</li>
+<li><code>git diff HEAD</code></li>
+<li><code>git commit</code> -m “MESSAGE” =&gt; -am to skip the stagging era</li>
+<li><code>git log</code></li>
+</ul></li>
+</ul>
+</section>
+<section id="git-messages" class="slide level2" style="text-align: center;">
+<h2>Git messages</h2>
+<p>Clear messages if possible…</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./img/git_commit_2x.png" class="quarto-figure quarto-figure-center" height="800"></p>
+</figure>
+</div>
+<p><a href="https://xkcd.com/1296/">Credit: xkcd</a></p>
+</section>
+<section id="a-complete-record-of-the-data" class="slide level2">
+<h2>A complete record of the data</h2>
+<p>Possibility to see the differences (diff) between steps</p>
+<ul>
+<li>with specific commits</li>
+<li>with specific files
+<ul>
+<li><code>git diff IDCOMIT FILE</code></li>
+</ul></li>
+</ul>
+<p>For instance <code>git diff HEAD^</code> for the last commit</p>
+</section>
+<section id="possibility-to-restore" class="slide level2">
+<h2>Possibility to restore</h2>
+<p>Each state is stored with a 40-digit hash with a 7-digit summary.</p>
+<p>Since there is a complete history, possibility to :</p>
+<ul>
+<li>restore file/files
+<ul>
+<li><code>git restore FILE</code></li>
+<li><code>git reset --hard IDCOMMIT</code></li>
+</ul></li>
+<li>go back to a commit
+<ul>
+<li><code>git checkout IDCOMMIT</code></li>
+</ul></li>
+</ul>
+</section>
+<section id="section-3" class="slide level2">
+<h2></h2>
+<div title="Code &amp; Data">
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Code &amp; Data</strong></p>
+</div>
+<div class="callout-content">
+<p>Git is not designed to version data</p>
+<p>Other solutions as <a href="https://git-lfs.com/">Git LFS</a> or <a href="https://zenodo.org/">Zenodo</a> for research.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="how-to-get-git" class="slide level2">
+<h2>How to get git</h2>
+<ul>
+<li>Already installed on Linux/Mac</li>
+<li>For windows :
+<ul>
+<li>https://gitforwindows.org/</li>
+</ul></li>
+</ul>
+</section>
+<section id="exercises-1-1" class="slide level2">
+<h2>Exercises 1</h2>
+<div title="Create a repository">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Create a repository</strong></p>
+</div>
+<div class="callout-content">
+
+</div>
+</div>
+</div>
+</div>
+<div title="Add a new file called README.md">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Add a new file called README.md</strong></p>
+</div>
+<div class="callout-content">
+<p>Add a content</p>
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="from-local-to-cloud" class="title-slide slide level1 center">
+<h1>From local to cloud</h1>
+
+</section>
+<section id="github-genesis" class="slide level2">
+<h2>Github genesis</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<ul>
+<li>A startup launched in 2008
+<ul>
+<li>Bought by Microsoft in 2018 (evolution of OS)</li>
+</ul></li>
+<li>Basically : Git on cloud + services
+<ul>
+<li>Centralized repository</li>
+</ul></li>
+<li>A system of rights to access (maintainer, contributor, etc.)</li>
+<li>A grammar of contribution based on Git
+<ul>
+<li>push, pull, pull request, etc.</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:30%;">
+<p><img data-src="./img/octocat.jpg"> <a href="https://myoctocat.com/build-your-octocat/">Build your octocat</a></p>
+</div></div>
+</section>
+<section id="a-plateform-for-projects" class="slide level2">
+<h2>A plateform for projects</h2>
+<ul>
+<li>A central repository that connect developers and users</li>
+<li>Allow contributions to be visible</li>
+<li>Allow discussions</li>
+</ul>
+<p>Why to use it ?</p>
+<ul>
+<li>Reproducibility / Transparency</li>
+<li>Ease of collaboration</li>
+<li>Best practices integration</li>
+<li>Work from multiple machines seemlessly</li>
+</ul>
+</section>
+<section id="github-also-a-social-media" class="slide level2">
+<h2>Github : also a social media</h2>
+<ul>
+<li>A showcase of projects
+<ul>
+<li>Stars</li>
+</ul></li>
+<li>A platform to stay updated
+<ul>
+<li>Versions &amp; contributions</li>
+</ul></li>
+<li>A space for socializing &amp; exchanging
+<ul>
+<li>Issues</li>
+<li>Communities</li>
+</ul></li>
+</ul>
+<p>More and more used in research</p>
+</section>
+<section id="lets-have-a-look-the-most-famous-repository" class="slide level2">
+<h2>Let’s have a look : the most famous repository</h2>
+<ul>
+<li><a href="https://github.com/EvanLi/Github-Ranking">Most famous repository</a></li>
+<li><a href="https://anvaka.github.io/map-of-github/#2/0/0">Map of Github</a></li>
+</ul>
+<!-- Would be interesting to dig in the existing map of github -->
+</section>
+<section id="a-lot-of-services" class="slide level2">
+<h2>A lot of services</h2>
+<ul>
+<li>Actions (Continuous integrations)</li>
+<li>Github pages</li>
+<li>Wiki</li>
+<li>…</li>
+</ul>
+</section>
+<section id="github-is-not-alone" class="slide level2">
+<h2>Github is not alone</h2>
+<p>Other open-source code-sharing platform (“forges” in French)</p>
+<ul>
+<li><a href="https://sourceforge.net/">SourceForge</a></li>
+<li><a href="https://bitbucket.org/product/">Bitbucket</a></li>
+<li><a href="https://about.gitlab.com/">Gitlab</a></li>
+<li><a href="https://about.gitea.com/">Gitea</a></li>
+</ul>
+</section>
+<section id="diversity-of-uses" class="slide level2">
+<h2>Diversity of uses</h2>
+<ul>
+<li>CLI (the “bare” philosophy)</li>
+<li>Integrated in other tools
+<ul>
+<li>VS Code</li>
+<li>R Studio</li>
+<li>Jupyter</li>
+</ul></li>
+<li>GUI
+<ul>
+<li>Github Desktop</li>
+</ul></li>
+</ul>
+</section>
+<section id="lets-have-a-look-with-cli" class="slide level2">
+<h2>Let’s have a look with CLI</h2>
+<p>Let’s put our slides on Github</p>
+<ul>
+<li>git init / git clone</li>
+<li><strong>git pull</strong></li>
+<li>git status</li>
+<li>git remote -v</li>
+<li>git add</li>
+<li>git commit</li>
+<li><strong>git push</strong></li>
+<li>…</li>
+</ul>
+</section>
+<section id="exercises-2-1" class="slide level2">
+<h2>Exercises 2</h2>
+<div title="Create your github account">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Create your github account</strong></p>
+</div>
+<div class="callout-content">
+
+</div>
+</div>
+</div>
+</div>
+<div title="Clone the slides repository">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Clone the slides repository</strong></p>
+</div>
+<div class="callout-content">
+<p>https://github.com/emilienschultz/phddigitalskills</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="complete-worklow" class="slide level2" style="text-align: center;">
+<h2>Complete worklow</h2>
+
+<img data-src="./img/githubflow.png" class="r-stretch"></section>
+<section id="authentification" class="slide level2">
+<h2>Authentification</h2>
+<p>It can sometime be tricky…</p>
+<ul>
+<li>HTTPS</li>
+<li>SSH : create your key and register it</li>
+<li>Token</li>
+</ul>
+</section>
+<section id="how-to-set-auth" class="slide level2">
+<h2>How to set auth</h2>
+<ul>
+<li>With SSH key if you are using SSH
+<ul>
+<li><a href="https://swcarpentry.github.io/git-novice/07-github.html">How to setup SSH keys</a></li>
+<li><a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh">Create a key, add it to Github repo and your key manager</a></li>
+</ul></li>
+<li>With token
+<ul>
+<li><a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens">Create it through the Github interface</a></li>
+<li>Change the <code>remote</code> to add it</li>
+</ul></li>
+</ul>
+<p><code>git remote set-url origin https://ACCOUNT:TOKEN@github.com/REPO.git</code></p>
+</section>
+<section id="exercises-3-1" class="slide level2">
+<h2>Exercises 3</h2>
+<div title="Create your first repository">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Create your first repository</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>create one from Github</li>
+<li>modify the github README</li>
+<li>clone it on your computer</li>
+<li>make a modification + push
+<ul>
+<li>CLI or Github desktop</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div title="Collaborate">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Collaborate</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Give permission to a colleague to modify your repository</li>
+<li>Make him/her do a change</li>
+<li>Then, try yourself to make a change</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="complexity-of-3-levels-conflicts" class="slide level2">
+<h2>Complexity of 3 levels &amp; conflicts</h2>
+<ul>
+<li>Online repo vs.&nbsp;local repos</li>
+<li>Risks of conflicts
+<ul>
+<li>Local repo delayed from origin</li>
+<li>Different versions</li>
+</ul></li>
+<li>Importance to <code>pull</code> latest version</li>
+<li>Solve conflicts</li>
+</ul>
+</section>
+<section id="and-if-there-are-conflicts" class="slide level2">
+<h2>And if there are conflicts ?</h2>
+<ul>
+<li>markers will be left in the problematic files showing the conflict;</li>
+<li>you will have to arbitrate.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./img/git-merge.gif" class="quarto-figure quarto-figure-center" height="500"></p>
+</figure>
+</div>
+</section>
+<section id="conflicts" class="slide level2">
+<h2>Conflicts</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./img/conflict.svg" class="quarto-figure quarto-figure-center" height="400"></p>
+</figure>
+</div>
+<ul>
+<li>Define the rule to merge differing histories
+<ul>
+<li><a href="https://www.atlassian.com/git/tutorials/merging-vs-rebasing">merge, rebase</a></li>
+</ul></li>
+<li>If needed, intervene in the documents &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</li>
+</ul>
+</section>
+<section id="advanced-branches" class="slide level2">
+<h2>[Advanced] Branches</h2>
+<p>Why ? Test things without modifying the principal branch for instance</p>
+<ul>
+<li>Not only one succession of commits</li>
+<li>But different series in parallel</li>
+<li>And the possibility to merge from one branch to another</li>
+</ul>
+<p>Create a branch : <code>git branch NAME</code> or <code>git checkout -b NAME</code>, and change with <code>git switch NAME</code></p>
+</section>
+<section id="exercise-4" class="slide level2">
+<h2>Exercise 4</h2>
+<div title="Collaborate">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Collaborate</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Create a branch</li>
+<li>Swich to the branch</li>
+<li>Make a modification</li>
+<li>Go back to the main</li>
+<li>What happened ?</li>
+<li>Delete the branch</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<p><em>Branches are cheap and easy, so this is a good way to try something out.</em></p>
+</section>
+<section id="advanced-how-to-merge-different-branches" class="slide level2">
+<h2>[Advanced] How to merge different branches</h2>
+<ul>
+<li>When you want to join existing branches</li>
+<li>Or when the remote has to be joined to the local</li>
+</ul>
+<p>Commit history can differ</p>
+<ul>
+<li>merge/rebase strategies : keep the modifications modify the history</li>
+<li>brute force : erase (not advised)</li>
+</ul>
+<p>If the changes don’t conflict, you’re done.</p>
+</section>
+<section id="ways" class="slide level2" style="text-align: center;">
+<h2>2 ways</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./img/rebasemerge.png" class="quarto-figure quarto-figure-center" height="800"></p>
+</figure>
+</div>
+</section>
+<section id="advanced-.gitignore-file" class="slide level2">
+<h2>[Advanced] .gitignore file</h2>
+<p>Possibility to exclude files from the tracking</p>
+<ul>
+<li>Data</li>
+<li>Config files</li>
+<li>Private information</li>
+</ul>
+<p>Add them in a file called .gitignore</p>
+</section>
+<section id="advanced-pull-requests" class="slide level2">
+<h2>[Advanced] pull requests</h2>
+<p>It is a proposed change to a codebaseWhen a pull request is created</p>
+<ul>
+<li>Made on an independant branch</li>
+<li>Proposed to review for the repository</li>
+<li>Possibility to discuss on it</li>
+</ul>
+</section>
+<section id="final-overview" class="slide level2">
+<h2>Final overview</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./img/gittotal.png" class="quarto-figure quarto-figure-center" height="800"></p>
+</figure>
+</div>
+</section>
+<section id="exercises-3-2" class="slide level2">
+<h2>Exercises 3</h2>
+<div title="Suggest me modification for this course">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Suggest me modification for this course</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Fork my repository</li>
+<li>Create a branch</li>
+<li>Do a modification</li>
+<li>Suggest a pull/request</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="conclusion-for-your-research" class="slide level2">
+<h2>Conclusion : for your research</h2>
+<ul>
+<li>Locally : track your work</li>
+<li>In the cloud : work with different computers/services seamlessly</li>
+<li>Collaborate easily</li>
+<li>Show your work
+<ul>
+<li>Open code foster reproducibility</li>
+</ul></li>
+</ul>
+<p><strong>Practice</strong></p>
+</section>
+<section id="ressources-1" class="slide level2">
+<h2>Ressources</h2>
+<ul>
+<li><a href="https://swcarpentry.github.io/git-novice/">Version control with Git - Software Carpentry</a></li>
+<li><a href="https://book.the-turing-way.org/reproducible-research/open">The Turing Way : Version Control</a></li>
+<li><a href="https://luispfonseca.com/files/slides_git.pdf">Version control with git (for economists)</a></li>
+<li><a href="https://inseefrlab.github.io/formation-bonnes-pratiques-git-R">Good practices for statistical projects with R &amp; Git (INSEE)</a></li>
+<li><a href="https://git-scm.com/book/en/v2">Git Reference guidelines</a></li>
+<li><a href="https://programminghistorian.org/en/lessons/retired/getting-started-with-github-desktop">An Introduction to Version Control Using GitHub Desktop</a></li>
+</ul>
+</section></section>
+<section id="break" class="title-slide slide level1 center">
+<h1>Break</h1>
+<div class="quarto-auto-generated-content">
+<div class="footer footer-default">
+
+</div>
+</div>
+</section>
+
+
+    </div>
+  </div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="slides_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="slides_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="slides_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="slides_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="slides_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="slides_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="slides_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="slides_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const onCopySuccess = function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
+      });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>
