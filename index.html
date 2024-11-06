@@ -422,18 +422,6 @@
 </ul></li>
 </ul>
 </section>
-<section id="who-are-you" class="slide level2">
-<h2>Who are you ?</h2>
-<ul>
-<li>What is your disciplinary background ?</li>
-<li>What software are you using ?
-<ul>
-<li>Programming ? R ? Python ?</li>
-</ul></li>
-<li>Are you using CLI ?</li>
-<li>Are you using Git/Github ?</li>
-</ul>
-</section>
 <section id="general-goals" class="slide level2">
 <h2>General goals</h2>
 <ul class="task-list">
@@ -459,6 +447,18 @@
 <li><strong>Integrating best open source practices for research</strong></li>
 </ul>
 <p>Everything will be on the repository : https://github.com/emilienschultz/phddigitalskills</p>
+</section>
+<section id="who-are-you" class="slide level2">
+<h2>Who are you ?</h2>
+<ul>
+<li>What is your disciplinary background ?</li>
+<li>What software are you using ?
+<ul>
+<li>Programming ? R ? Python ?</li>
+</ul></li>
+<li>Are you using CLI ?</li>
+<li>Are you using Git/Github ?</li>
+</ul>
 </section></section>
 <section>
 <section id="command-line-interface" class="title-slide slide level1 center">
@@ -635,7 +635,7 @@
 <ul>
 <li><strong>Absolute path</strong> : from the root
 <ul>
-<li>It depends of the specific computer</li>
+<li>It depends on the computer specific organization</li>
 </ul></li>
 <li><strong>Relative path</strong> : from current location
 <ul>
@@ -690,8 +690,8 @@
 </div>
 </div>
 </section>
-<section id="info-rights-to-access" class="slide level2">
-<h2>[info] Rights to access</h2>
+<section id="just-for-info-rights-to-access" class="slide level2">
+<h2>[just for info] Rights to access</h2>
 <ul>
 <li><p>Each file/directory has specific access</p></li>
 <li><p>Your access is determined by your status</p></li>
@@ -705,8 +705,12 @@
 </section>
 <section id="third-the-structure-of-the-commands" class="slide level2">
 <h2>Third, the structure of the commands</h2>
-
-<img data-src="./img/shell_command_syntax.svg" class="quarto-figure quarto-figure-center r-stretch" width="500"><ul>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./img/shell_command_syntax.svg" class="quarto-figure quarto-figure-center" height="150"></p>
+</figure>
+</div>
+<ul>
 <li>usally a command is a name</li>
 <li>with options indicated with flag (-o VALUE) or full name (-option VALUE)</li>
 <li>and different arguments (it can be quite long and confusing)</li>
@@ -736,7 +740,7 @@
 </ul>
 <p>Connect</p>
 <ul>
-<li>Go to mes services</li>
+<li>Go to services</li>
 <li>New service &gt; Jupyter-python</li>
 <li>In option, Git, add repository https://github.com/emilienschultz/phddigitalskills</li>
 <li>Launch the service</li>
@@ -781,10 +785,13 @@
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>How to list the size of the files</strong></p>
+<p><strong>Create this filesysteme</strong></p>
 </div>
 <div class="callout-content">
-
+<pre><code>2024-11-06/
+└── data
+   ├── processed
+   └── raw</code></pre>
 </div>
 </div>
 </div>
@@ -794,13 +801,10 @@
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Create this filesysteme</strong></p>
+<p><strong>How to list the size of the files</strong></p>
 </div>
 <div class="callout-content">
-<pre><code>2024-11-06/
-└── data
-   ├── processed
-   └── raw</code></pre>
+<p>Don’t hesitate to search online</p>
 </div>
 </div>
 </div>
@@ -947,7 +951,7 @@
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Download the file with the command in the README</strong></p>
+<p><strong>Download the xkcd pictures file</strong></p>
 </div>
 <div class="callout-content">
 <div class="sourceCode" id="cb12"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href=""></a><span class="ex">curl</span> <span class="at">-L</span> <span class="at">-o</span> img.zip <span class="st">"https://www.dropbox.com/scl/fi/mv6ex82vws3i5ljn3ck6g/img.zip?rlkey=l7w4hgazna4bf0lfahrzuoyn2&amp;st=j76lm525&amp;dl=1"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -973,7 +977,7 @@
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Find all files that mention your discipline</strong></p>
+<p><strong>Find all files that mention science</strong></p>
 </div>
 <div class="callout-content">
 
@@ -986,7 +990,7 @@
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>How many strips mention “science” ?</strong></p>
+<p><strong>How many files mention “science” ?</strong></p>
 </div>
 <div class="callout-content">
 
@@ -999,7 +1003,7 @@
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Get the line in the jsonl file for a picture with grep</strong></p>
+<p><strong>Get the line in the jsonl file for a specific picture with grep</strong></p>
 </div>
 <div class="callout-content">
 
@@ -1018,7 +1022,7 @@
 <p><strong>Unzip the data</strong></p>
 </div>
 <div class="callout-content">
-<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href=""></a><span class="fu">unzip</span> img.zip</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href=""></a><span class="fu">unzip</span> img.zip <span class="at">-d</span> xkcd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1028,23 +1032,10 @@
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Find all files that mention your discipline</strong></p>
+<p><strong>Find all files that mention science</strong></p>
 </div>
 <div class="callout-content">
-<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href=""></a><span class="fu">find</span> img <span class="at">-name</span> <span class="st">"*sociology*"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Get the line in the jsonl file for a picture with frep</strong></p>
-</div>
-<div class="callout-content">
-<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href=""></a><span class="fu">grep</span> <span class="va">$NAME</span> dataset/<span class="pp">*</span>.jsonl</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href=""></a><span class="fu">find</span> img <span class="at">-name</span> <span class="st">"*science*"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1057,7 +1048,22 @@
 <p><strong>How many strips mention “science”</strong></p>
 </div>
 <div class="callout-content">
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href=""></a><span class="fu">find</span> img <span class="at">-iname</span> <span class="st">"*science*"</span> <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>or</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href=""></a><span class="fu">grep</span> <span class="at">-i</span> science dataset.jsonl <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Get the line in the jsonl file for a specific picture with grep</strong></p>
+</div>
+<div class="callout-content">
+<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href=""></a><span class="fu">grep</span> <span class="va">$NAME</span> dataset/<span class="pp">*</span>.jsonl</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1073,8 +1079,8 @@
 <li>Windows : choco</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href=""></a><span class="fu">sudo</span> apt-get update</span>
-<span id="cb17-2"><a href=""></a><span class="fu">sudo</span> apt-get install XXXX</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href=""></a><span class="fu">sudo</span> apt-get update</span>
+<span id="cb18-2"><a href=""></a><span class="fu">sudo</span> apt-get install XXXX</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="exercises-3" class="slide level2">
 <h2>Exercises 3</h2>
@@ -1103,9 +1109,9 @@
 <p><strong>Transform a set of pictures in a pdf</strong></p>
 </div>
 <div class="callout-content">
-<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href=""></a><span class="fu">sudo</span> apt-get update</span>
-<span id="cb18-2"><a href=""></a><span class="fu">sudo</span> apt-get install imagemagick</span>
-<span id="cb18-3"><a href=""></a><span class="ex">convert</span> <span class="pp">*</span>science<span class="pp">*</span>.png output.pdf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href=""></a><span class="fu">sudo</span> apt-get update</span>
+<span id="cb19-2"><a href=""></a><span class="fu">sudo</span> apt-get install imagemagick</span>
+<span id="cb19-3"><a href=""></a><span class="ex">convert</span> <span class="pp">*</span>science<span class="pp">*</span>.png output.pdf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1333,10 +1339,11 @@
 <h2>Workflow</h2>
 <p>A file in a repo can be:</p>
 <ol type="1">
-<li>Untracked: the git repo does not include it in commits, save any changes, etc. Default state for new files</li>
-<li>Unmodified: tracked files that have not been modified since the version stored in the last commit</li>
-<li>Modified: tracked files that have been modified since the version stored in the last commit</li>
-<li>Staged: the changes made at the time you added the file (but not newer changes since then) will be included in the next commit</li>
+<li><strong>Untracked</strong>: the git repo does not include it in commits, save any changes, etc. Default state for new files</li>
+<li><strong>Unmodified</strong>: tracked files that have not been modified since the version stored in the last commit</li>
+<li><strong>Modified</strong>: tracked files that have been modified since the version stored in the last commit</li>
+<li><strong>Staged</strong>: the changes made at the time you added the file (but not newer changes since then) will be included in the next commit</li>
+<li><strong>Commit</strong>: saved the snapshot as a dedicated element</li>
 </ol>
 </section>
 <section id="section-1" class="slide level2">
@@ -1367,7 +1374,7 @@
 <p>Clear messages if possible…</p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="./img/git_commit_2x.png" class="quarto-figure quarto-figure-center" height="800"></p>
+<p><img data-src="./img/git_commit_2x.png" class="quarto-figure quarto-figure-center" height="500"></p>
 </figure>
 </div>
 <p><a href="https://xkcd.com/1296/">Credit: xkcd</a></p>
@@ -1481,10 +1488,7 @@
 <li>Centralized repository</li>
 </ul></li>
 <li>A system of rights to access (maintainer, contributor, etc.)</li>
-<li>A grammar of contribution based on Git
-<ul>
-<li>push, pull, pull request, etc.</li>
-</ul></li>
+<li>A grammar of operations based on Git, with specificities</li>
 </ul>
 </div><div class="column" style="width:30%;">
 <p><img data-src="./img/octocat.jpg"> <a href="https://myoctocat.com/build-your-octocat/">Build your octocat</a></p>
@@ -1817,7 +1821,7 @@
 <h2>Final overview</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="./img/gittotal.png" class="quarto-figure quarto-figure-center" height="800"></p>
+<p><img data-src="./img/gittotal.png" class="quarto-figure quarto-figure-center" height="700"></p>
 </figure>
 </div>
 </section>
