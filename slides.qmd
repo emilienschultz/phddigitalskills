@@ -1,0 +1,988 @@
+---
+title: "Digital skills for PhD students"
+author: " Émilien Schultz - Nicolas Chopin"
+format: 
+    revealjs:
+        slide-number: true
+        theme: simple 
+        transition: slide
+        highlight-style: github
+---
+
+# Forwords
+
+## Who are we
+
+- Nicolas Chopin
+    - Professor of Data Sciences/Statistics/Machine Learning at ENSAE
+    - *nicolas.chopin@ensae.fr*
+- Émilien Schultz
+    - Data scientist/research facilitator at CREST
+    - *emilien.schultz@ensae.fr*
+
+## Who are you ?
+
+- What is your disciplinary background ?
+- What software are you using ?
+    - Programming ? R ? Python ?
+- Are you using CLI ?
+- Are you using Git/Github ?
+
+## General goals
+
+- [ ] Establish fundamental concepts
+- [ ] Suggest for best/better practices
+- [ ] Discuss about your practices
+
+## 3 steps
+
+1. Gentle introduction of command line interfaces (CLI) - **1h**
+2. Code versioning, Git/Github, open science - **1h30**
+3. Latex for scientific publishing - **1h30**
+
+break at 16h - end around 18h
+
+## No prerequisite
+
+- Fundational knowledge
+- Adequate for scripts/programming
+- **Integrating best open source practices for research**
+
+Everything will be on the repository : https://github.com/emilienschultz/phddigitalskills
+
+# Command Line Interface
+
+## What is the command line interface ?
+
+> A command-line interface (CLI) is a means of interacting with a computer program by inputting lines of text called command-lines
+
+- In the past, every computer
+- Now, mainly unix systems (linux, mac...)
+    - And in programming
+
+## The great divide
+
+2 different traditions/philosophies
+
+- graphical user interface (GUI)
+    - mouse + everything visible
+    - massive software
+- command-line interface (CLI) 
+    - keyboard (text-based) + everything hidden
+    - one command per tool
+
+> small, simple programs with clean interfaces can be combined to build larger systems
+
+
+## Why do I have to care about CLI ?
+
+- To systematize complexe treatments
+    - Access to scripting langages
+- To be able to use different types of remote computer (high-performance computing)
+- To mix it with scripts (Python, R)
+- To use specific tools
+- Combine existing tools into powerful pipelines
+- <span style="color:gray;">To be a better person</span>
+- <span style="color:gray;">To impress your friends & family</span>
+
+## 
+
+![](./img/nature.png){fig-align="center"}
+
+## This is overtly complicated
+
+Yes, but it is structured by principles that are everywhere in programming and computing interfaces.
+
+![](./img/matrix-cli.jpg){fig-align="center"}
+
+##
+
+> A lot has changed about how we program computers since those early days. The command line of the past was machine-first: little more than a REPL on top of a scripting platform. But as general-purpose interpreted languages have flourished, the role of the shell script has shrunk. Today’s command line is human-first: a text-based UI that affords access to all kinds of tools, systems and platforms. In the past, the editor was inside the terminal—today, the terminal is just as often a feature of the editor. And there’s been a proliferation of git-like multi-tool commands. Commands within commands, and high-level commands that perform entire workflows rather than atomic functions. [https://clig.dev/]
+
+## Small examples
+
+::: {.callout-note}
+## search all files with a .r extension
+
+``` bash
+find ~/Documents -type f -name "*.r"
+```
+
+:::
+
+::: {.callout-note}
+## create a python virtual environnement, install a package and run a script
+``` bash
+conda create -n new_env python=3.8
+pip install pandas
+python script.py
+```
+:::
+
+::: {.callout-note}
+## connect to a remote computer with ssh
+
+``` bash
+ssh -Y eschultz@cca.in2p3.fr 
+```
+
+:::
+
+## You don't have to master all of it 
+
+- You will use only specific command
+- You can search/chatgpt it
+- And you can make different attemps : it is a **dialogue**
+
+![](./img/tar.png){fig-align="center"}
+
+## To clarify a point
+
+- CLI is a general philosophy
+- Where specific commands can be :
+    - Build-in commands (Unix/linux)
+    -   OS specific commands (Windows, Mac)
+    - Specific tools command (once installed)
+
+Using CLI mix general principles and some familiary with unix systems.
+
+::: {.callout-note}
+## For instance always find help the same way
+:::
+
+## First, the console / terminal / shell
+
+It is a program that allows you to enter commands.
+
+- The place to type commands
+- Available on unix systems (unix shell)
+    - Different flavours : Bash[^bash], Zsh
+- Accessible in different environnement 
+    - Rstudio / Jupyter / ...
+    - On Windows : [Windows Subsystem for Linux](https://learn.microsoft.com/en-us/windows/wsl/install)
+
+
+[^bash]: the Bourne Again SHell — so-called because it’s derived from a shell written by Stephen Bourne
+
+## Second, the file system
+
+- file/directory (folder)
+- computer filesystem organiserd from a drive/root
+    - `/`
+    - `C:\`
+- The file system is a tree 🌲
+   - **Absolute path** : from the root
+       - It depends of the specific computer
+   - **Relative path** : from current location 
+       - Each software is running from somewhere : its current location `.`
+
+## First commands
+
+- `pwd` : the current working directory
+- `ls` : list all the files in a folder
+- `cd` : change directory to a specific path
+- `mkdir` : create a folder (-p for nested)
+- `rm` : remove a file
+- `touch` : create an empty file
+- `cp` : copy a file
+- `mv` : move a file
+
+*Let's have a quick look*
+
+## Tips
+
+::: {.callout-note}
+## Tab completion and up/down
+Use tab to facilitate completion
+:::
+
+::: {.callout-note}
+## specific elements
+- `..` : parent folder
+- `~` : home
+:::
+
+
+## [info] Rights to access
+
+- Each file/directory has specific access
+- Your access is determined by your status
+
+- `ls -l` : owner, group, all
+- `sudo` to use root privileges
+- `chmod` to change permissions
+    - `chmod 755 filename` : sets read/write/execute permissions.
+
+## Third, the structure of the commands
+
+Commands have a global pattern
+
+![](./img/shell_command_syntax.svg)
+
+- usally a command is a name
+- with options indicated with flag (-o VALUE) or full name (-option VALUE)
+- a man page `man command` or for tools an  help : `command --help`
+- and different arguments
+
+
+
+## Let's try
+
+- **GENES** has a datalab accessible with your ENSAE account : https://onyxia.lab.groupe-genes.fr/
+ - or **INSEE** datalab : https://www.onyxia.sh/
+ - or your computer
+
+Connect
+
+- Go to mes services
+- New service > Jupyter-python
+- In option, Git, add repository https://github.com/emilienschultz/phddigitalskills
+- Launch the service
+- Launch a terminal inside it
+
+
+## Exercises 1
+
+::: {.callout-tip title="List all folders"}
+:::
+
+::: {.callout-tip title="Go to phddigitalskills folder / a folder"}
+:::
+
+
+::: {.callout-tip}
+## How to list the size of the files
+:::
+
+::: {.callout-tip}
+## Create this filesysteme
+```
+2024-11-06/
+└── data
+   ├── processed
+   └── raw
+```
+:::
+
+## Corrections 1
+
+::: {.callout-tip title="List all folders"}
+``` bash
+ls -la
+```
+:::
+
+::: {.callout-tip}
+## Go to phddigitalskills folder
+``` bash
+cd phddigitalskills
+```
+:::
+
+::: {.callout-tip}
+## How to list the size of the files
+``` bash
+ls -l --block-size=M
+```
+:::
+
+::: {.callout-tip}
+## Create this filesystme
+``` bash
+mkdir -p 2024-11-06/data
+cd 2024-11-06/data
+mkdir processed
+mkdir raw
+```
+:::
+
+## More useful commands
+
+- `echo` : print text
+- `tail` and `head` : display the beginning / end of a file
+- `find`
+    - Use * as a wildcard
+- `wc` : word count
+- `cat` : concatenate text then display
+- `sort` : sort
+- `grep` :  contraction of ‘global/regular expression/print’
+
+## Each tool has multiple powers
+
+> grep‘s real power doesn’t come from its options, though; it comes from the fact that patterns can include wildcards. (The technical name for these is regular expressions, which is what the ’re’ in ‘grep’ stands for.) 
+
+## More (just to know they exist) !
+
+- `ps` : see current processes
+- `kill`: kill a process
+- `df`: see disk space
+- `du`: disk usage
+    - `du -sh * `: see disk usage of all files
+- `vim` or `nano` : edit text files
+- `curl` : download files
+
+## Successive commands : the pipe
+
+- output on files `>` (w) and `>>` (a)
+- pipe `|`
+
+The number of lines : 
+
+
+``` bash
+ls -l | wc -l
+```
+
+::: {.callout-tip}
+## Variables
+`$HOME`, `$PATH`
+:::
+
+## Beyond ...
+
+- Modify file content (regex) with `sed`
+- Possibility to do loops, conditions
+- Write complete scripts
+    - `bash script.sh`
+
+``` bash
+for filename in *.png
+do
+    cp $filename xkcd-$filename
+done
+```
+
+or 
+
+``` bash
+for filename in *.png; do echo $filename; done
+```
+
+## Exercises 2
+
+::: {.callout-tip}
+## Download the file with the command in the README
+``` bash
+curl -L -o img.zip "https://www.dropbox.com/scl/fi/mv6ex82vws3i5ljn3ck6g/img.zip?rlkey=l7w4hgazna4bf0lfahrzuoyn2&st=j76lm525&dl=1"
+```
+:::
+
+::: {.callout-tip}
+## Unzip the data
+:::
+
+::: {.callout-tip}
+## Find all files that mention your discipline
+:::
+
+::: {.callout-tip}
+## How many strips mention "science" ?
+:::
+
+::: {.callout-tip}
+## Get the line in the jsonl file for a picture with grep
+:::
+
+
+## Corrections 2
+
+::: {.callout-tip}
+## Unzip the data
+``` bash
+unzip img.zip
+```
+:::
+
+::: {.callout-tip}
+## Find all files that mention your discipline
+
+``` bash
+find img -name "*sociology*"
+``` 
+:::
+
+::: {.callout-tip}
+## Get the line in the jsonl file for a picture with frep
+``` bash
+grep $NAME dataset/*.jsonl
+``` 
+:::
+
+::: {.callout-tip}
+## How many strips mention "science"
+``` bash
+grep -i science dataset.jsonl | wc -l
+``` 
+:::
+
+## Install linux tool
+
+- A lot of tools are software you need to install
+- Each OS has a package manager
+    - Debian : apt-get
+    - macOS : brew
+    - Windows : choco
+
+``` bash
+sudo apt-get update
+sudo apt-get install XXXX
+```
+
+## Exercises 3
+
+::: {.callout-tip}
+## Transform a set of pictures in a pdf (for instance, all which have science in the name)
+
+Look for a CLI tool and install it
+
+:::
+
+## Corrections
+
+::: {.callout-tip}
+## Transform a set of pictures in a pdf
+``` bash
+sudo apt-get update
+sudo apt-get install imagemagick
+convert *science*.png output.pdf
+```
+:::
+
+## Powerful tools exist
+
+For instance, **xan** https://github.com/medialab/xan
+
+> xan is a command line tool that can be used to process CSV files directly from the shell.
+> It has been written in Rust to be as performant as possible and can easily handle very large CSV files (Gigabytes). It is also able to leverage parallelism (through multithreading) to make some tasks complete as fast as your computer can allow.
+> It can easily preview, filter, slice, aggregate, sort, join CSV files, and exposes a large collection of composable commands that can be chained together to perform a wide variety of typical tasks.
+
+
+## Ressources
+
+- Perkel, Jeffrey M. « Five Reasons Why Researchers Should Learn to Love the Command Line ». Nature 590, nᵒ 7844 (4 février 2021): 173‑74. https://doi.org/10.1038/d41586-021-00263-0.
+- [The Unix Shell from Software Carpentry](https://swcarpentry.github.io/shell-novice/01-intro.html)
+- [Command Line Interface Guidelines](https://clig.dev/)
+- [The Linux Command line for beginners](https://ubuntu.com/tutorials/command-line-for-beginners#1-overview)
+
+
+# Learning from open-source practices to improve open science: introduction to code versioning tools (Git & Github)
+
+## In a nutshell
+
+- Scientific programming can be messy
+- There is stuff to learn from open source community
+- Foster open science and reproducibility
+
+::: {.callout-tip title="Scientific programming"}
+All the practices involving code
+
+- solitary (you and your computer)
+- collaboratively (with colleagues)
+:::
+
+## Goals for this part
+
+
+- Some best practices for scientific programming
+- Getting familiar with Git/GitHub
+- Starting the structure of a project
+- Available resources
+
+*This session will be language agnostique*
+
+::: {.callout-warning title="You don't have to know everything"}
+
+
+- There are numerous tutorials
+- The general philosophy comes first
+:::
+
+## Code & text versions
+
+![](./img/finalfinal.png){height=700 fig-align="center"}
+
+## Rule 1 : Structuring a Project
+
+- Separate code from data
+    - Different logic
+    - Different tools
+- Document / Comment your productions
+    - Be explicit (variables, document file)
+    - *Yes, it is boring, but useful*
+- Modularize : create distinct elements
+    - One file per element
+    - Function rather than repeating code
+
+## Rule 2 : a common file system
+
+- Organize your project
+    - **data** in a data directory
+    - **scripts** in a script directory
+    - *what else ?*
+- Create a common place to store it
+
+## Rule 3 : adopt code versionning
+
+Use dedicated tools to manage collaboration with data
+
+- keep the history
+- experiment without fear
+- back and forth between many different versions
+- work together
+
+# Next step : code versionning
+
+## What is code versionning ?
+
+- *Option 1* : there is only one document and you send each version by email
+    - slow and a lots of version
+- *Option 2* : there is only one document online on the cloud and you work on it
+    - difficulty to keep track of the versions
+    - can be chaos with multiple contributors
+- *Option 3* : each contribution is clearly identified in a distributed file system with clear rules of modification and a tracking of versions
+
+**Entering Git & Github**
+
+## Code versioning is old
+
+- Tools like RCS, CVS, or Subversion around since the early 1980s
+    - Some readings : [Industrial public goods: A genesis of the insertion of free software in Silicon Valley, Gabriel Alcaras, Sociologie du travail, 2020](https://journals.openedition.org/sdt/33283)
+- Leading the way to distributed tools
+
+**Somehow, it is a meta file organisation that keeps track of contributions and force you to (some) good practices**
+
+## Git and the Linux history
+
+- An history born from the free software movement
+- [The "bazar" of contribution](https://en.wikipedia.org/wiki/The_Cathedral_and_the_Bazaar)
+    - No vertical integration
+- Linux Torvald benevolent dictator
+    - [Obligatory point of passage](https://blog.brachiosoft.com/en/posts/git/)
+- The big question :
+    - How to collabore efficiently
+
+## Git
+
+![](./img/gitxkcd.png){height=700 fig-align="center"}
+
+[Credits : xkcd](https://xkcd.com/1597/)
+
+## How does it work
+
+- A base unit : the repository containing everything
+- A network of contribution with a unique id
+    - Everything intermediate version saved
+- Different parallel branches
+
+![[Source : Lutece.paris.fr](https://lutece.paris.fr/support/jsp/site/Portal.jsp?page=wiki&view=page&page_name=git&language=fr)](./img/branches.png){height=400 fig-align="center"}
+
+**A world in itself...**
+
+
+## What is Git exactly ?
+
+Git is a **command line tool** which allows to :
+
+- record snapshots
+- manage changes (back, forward, fusions)
+- natively installed on unix systems
+- manage the relation between different repositories
+
+Over time
+
+- embedded in other tools 
+- became an infrastructure of programming practices & OS
+
+````
+$ git
+````
+
+## Workflow
+
+
+A file in a repo can be:
+
+1. Untracked: the git repo does not include it in commits, save
+any changes, etc. Default state for new files
+2. Unmodified: tracked files that have not been modified since the
+version stored in the last commit
+3. Modified: tracked files that have been modified since the
+version stored in the last commit
+4. Staged: the changes made at the time you added the file (but
+not newer changes since then) will be included in the next
+commit
+
+##
+
+![](./img/git-committing.svg){height=600 fig-align="center"}
+
+
+## Small demo with the slides
+
+- [First configure git](https://swcarpentry.github.io/git-novice/02-setup.html)
+- Then, initializing a git repo (CLI is useful)
+    - `git init` => a .git directory
+    - `git status`
+    - `git add FILE` => staging area
+    - `git diff HEAD`
+    - `git commit` -m "MESSAGE" => -am to skip the stagging era
+    - `git log`
+
+## Git messages {style="text-align: center;"}
+
+Clear messages if possible...
+
+![](./img/git_commit_2x.png){height=800 fig-align="center"}
+
+[Credit: xkcd](https://xkcd.com/1296/)
+
+## A complete record of the data
+
+Possibility to see the differences (diff) between steps
+
+- with specific commits
+- with specific files
+    - `git diff IDCOMIT FILE`
+
+For instance `git diff HEAD^` for the last commit
+
+## Possibility to restore
+
+Each state is stored with a 40-digit hash with a 7-digit summary.
+
+Since there is a complete history, possibility to :
+
+- restore file/files
+    - `git restore FILE`
+    - `git reset --hard IDCOMMIT`
+- go back to a commit
+    - `git checkout IDCOMMIT`
+
+## 
+
+::: {.callout-important title="Code & Data"}
+Git is not designed to version data
+
+Other solutions as [Git LFS](https://git-lfs.com/) or [Zenodo](https://zenodo.org/) for research.
+:::
+
+## How to get git
+
+- Already installed on Linux/Mac
+- For windows : 
+    - https://gitforwindows.org/
+
+## Exercises 1
+
+::: {.callout-tip title="Create a repository"}
+:::
+
+::: {.callout-tip title="Add a new file called README.md"}
+
+Add a content
+
+:::
+
+
+
+
+# From local to cloud
+
+## Github genesis
+
+:::: {.columns}
+
+::: {.column width="70%"}
+
+- A startup launched in 2008 
+    - Bought by Microsoft in 2018 (evolution of OS)
+- Basically : Git on cloud + services
+    - Centralized repository
+- A system of rights to access (maintainer, contributor, etc.)
+- A grammar of contribution based on Git
+    - push, pull, pull request, etc.
+
+:::
+
+::: {.column width="30%"}
+
+![](./img/octocat.jpg)
+[Build your octocat](https://myoctocat.com/build-your-octocat/)
+
+:::
+::::
+
+## A plateform for projects
+
+- A central repository that connect developers and users
+- Allow contributions to be visible
+- Allow discussions
+
+Why to use it ?
+
+- Reproducibility / Transparency
+- Ease of collaboration
+- Best practices integration
+- Work from multiple machines seemlessly
+
+## Github : also a social media
+
+- A showcase of projects
+    - Stars
+- A platform to stay updated
+    - Versions & contributions
+- A space for socializing & exchanging
+    - Issues
+    - Communities
+
+More and more used in research
+
+## Let's have a look : the most famous repository
+
+- [Most famous repository](https://github.com/EvanLi/Github-Ranking)
+- [Map of Github](https://anvaka.github.io/map-of-github/#2/0/0) 
+
+<!-- Would be interesting to dig in the existing map of github -->
+
+## A lot of services
+
+- Actions (Continuous integrations)
+- Github pages
+- Wiki
+- ...
+
+## Github is not alone
+
+Other open-source code-sharing platform ("forges" in French)
+
+- [SourceForge](https://sourceforge.net/)
+- [Bitbucket](https://bitbucket.org/product/)
+- [Gitlab](https://about.gitlab.com/)
+- [Gitea](https://about.gitea.com/)
+
+## Diversity of uses
+
+- CLI (the "bare" philosophy)
+- Integrated in other tools
+    - VS Code
+    - R Studio
+    - Jupyter
+- GUI 
+    - Github Desktop
+
+## Let's have a look with CLI
+
+Let's put our slides on Github
+
+- git init / git clone
+- **git pull**
+- git status
+- git remote -v
+- git add
+- git commit
+- **git push**
+- ...
+
+## Exercises 2
+
+::: {.callout-tip title="Create your github account"}
+:::
+
+::: {.callout-tip title="Clone the slides repository"}
+
+https://github.com/emilienschultz/phddigitalskills
+:::
+
+## Fork it
+
+A fork is a copy of a repository (but still connected).
+
+- Experiment with a project independently.
+- Propose Changes to the original repository through pull requests.
+
+
+## Complete worklow {style="text-align: center;"}
+
+![](./img/githubflow.png)
+
+## Authentification
+
+It can sometime be tricky...
+
+- HTTPS
+- SSH : create your key and register it
+- Token
+
+## How to set auth
+
+- With SSH key if you are using SSH
+    - [How to setup SSH keys](https://swcarpentry.github.io/git-novice/07-github.html)
+    - [Create a key, add it to Github repo and your key manager](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)
+- With token
+    - [Create it through the Github interface](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)
+    - Change the `remote` to add it
+
+```git remote set-url origin https://ACCOUNT:TOKEN@github.com/REPO.git```
+
+## Exercises 3
+
+::: {.callout-tip title="Create your first repository"}
+
+- create one from Github
+- modify the github README
+- clone it on your computer
+- make a modification + push
+    - CLI or Github desktop
+
+:::
+
+::: {.callout-tip title="Collaborate"}
+- Give permission to a colleague to modify your repository
+- Make him/her do a change
+- Then, try yourself to make a change
+:::
+
+
+## Complexity of 3 levels & conflicts
+
+- Online repo vs. local repos
+- Importance to keep it sync : `pull`
+- Risks of conflicts
+    - Local repo delayed from origin
+    - Different versions
+- Importance to `pull` latest version
+- Solve conflicts
+
+
+## And if there are conflicts ?
+
+- markers will be left in the problematic files showing the conflict;
+- you will have to arbitrate.
+
+![](./img/git-merge.gif){height="500px" fig-align="center"}
+
+
+## Conflicts
+
+![](./img/conflict.svg){height="400px" fig-align="center"}
+
+- Define the rule to merge differing histories
+    - [merge, rebase](https://www.atlassian.com/git/tutorials/merging-vs-rebasing)
+- If needed, intervene in the documents <<<<<<< HEAD
+
+
+
+## [Advanced] Branches
+
+Why ? Test things without modifying the principal branch for instance
+
+- Not only one succession of commits
+- But different series in parallel
+- And the possibility to merge from one branch to another
+
+Create a branch : `git branch NAME` or `git checkout -b NAME`, and change with `git switch NAME`
+
+## Exercise 4
+
+::: {.callout-tip title="Collaborate"}
+- Create a branch
+- Swich to the branch
+- Make a modification
+- Go back to the main
+-   What happened ?
+- Delete the branch
+:::
+
+
+*Branches are cheap and easy, so this is a good way to try something out.*
+
+
+## [Advanced] How to merge different branches 
+
+- When you want to join existing branches
+- Or when the remote has to be joined to the local
+
+Commit history can differ
+
+- merge/rebase strategies : keep the modifications modify the history
+- brute force : erase (not advised)
+
+If the changes don’t conflict, you’re done.
+
+## 2 ways {style="text-align: center;"}
+
+![](./img/rebasemerge.png){height="800px" fig-align="center"}
+
+## [Advanced] .gitignore file
+
+Possibility to exclude files from the tracking
+
+- Data
+- Config files
+- Private information
+
+Add them in a file called .gitignore
+
+
+## [Advanced] pull requests
+
+It is a proposed change to a codebase
+
+- Made on an independant branch
+- Proposed to review for the repository
+- Possibility to discuss on it
+
+## Final overview
+
+![](./img/gittotal.png){height="800px" fig-align="center"}
+
+## Exercises 4
+
+::: {.callout-tip title="Suggest me modification for this course"}
+- Fork my repository
+- Create a branch
+- Do a modification
+- Suggest a pull/request
+:::
+
+## Last comment : licences
+
+Even if your repository is public, it isn't necessarily open-source.
+
+- Define the license to clarify reuse, modification, and distribution permissions.
+- Science-Friendly licenses: Open Source Initiative (OSI)-approved like MIT, Apache 2.0, or GPL
+- Documentation: Provide a LICENSE file and mention the license in your README to ensure transparency for collaborators and users.
+
+
+## Conclusion : for your research
+
+- Locally : track your work
+- In the cloud : work with different computers/services seamlessly
+- Collaborate easily
+- Show your work
+    - Open code foster reproducibility
+
+**You need to start practicing, we are here to help**
+
+**Practice**
+
+## Ressources
+
+- [Version control with Git - Software Carpentry](https://swcarpentry.github.io/git-novice/)
+- [The Turing Way : Version Control](https://book.the-turing-way.org/reproducible-research/open)
+- [Version control with git (for economists)](https://luispfonseca.com/files/slides_git.pdf)
+- [Good practices for statistical projects with R & Git (INSEE)](https://inseefrlab.github.io/formation-bonnes-pratiques-git-R)
+- [Git Reference guidelines](https://git-scm.com/book/en/v2)
+- [An Introduction to Version Control Using GitHub Desktop](https://programminghistorian.org/en/lessons/retired/getting-started-with-github-desktop)
+- Perez-Riverol, Yasset et al. « Ten Simple Rules for Taking Advantage of Git and GitHub ». Édité par Scott Markel. PLOS Computational Biology 12, nᵒ 7 (14 juillet 2016): e1004947. https://doi.org/10.1371/journal.pcbi.1004947.
+
+# Break
+
+
+<!--
+
+Next step :
+- tags
+- continuous integration
+
+-->
