@@ -80,7 +80,7 @@ Everything will be on the repository : https://github.com/emilienschultz/phddigi
 ## Why do I have to care about CLI ?
 
 - To systematize complexe treatments
-    - Access to scripting langages
+    - Access to scripting languages
 - To be able to use different types of remote computer (high-performance computing)
 - To mix it with scripts (Python, R)
 - To use specific tools
@@ -112,7 +112,7 @@ find ~/Documents -type f -name "*.r"
 :::
 
 ::: {.callout-note}
-## create a python virtual environnement, install a package and run a script
+## create a python virtual environment, install a package and run a script
 ``` bash
 conda create -n new_env python=3.8
 pip install pandas
@@ -290,7 +290,7 @@ ls -l --block-size=M
 :::
 
 ::: {.callout-tip}
-## Create this filesystme
+## Create this filesystem
 ``` bash
 mkdir -p 2024-11-06/data
 cd 2024-11-06/data
