@@ -284,8 +284,13 @@ cd phddigitalskills
 
 ::: {.callout-tip}
 ## How to list the size of the files
+In Linux
 ``` bash
 ls -l --block-size=M
+```
+In mac
+``` bash
+ls -lh
 ```
 :::
 
