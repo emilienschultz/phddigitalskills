@@ -20,14 +20,6 @@ format:
     - Data scientist/research facilitator at CREST
     - *emilien.schultz@ensae.fr*
 
-## Who are you ?
-
-- What is your disciplinary background ?
-- What software are you using ?
-    - Programming ? R ? Python ?
-- Are you using CLI ?
-- Are you using Git/Github ?
-
 ## General goals
 
 - [ ] Establish fundamental concepts
@@ -49,6 +41,14 @@ break at 16h - end around 18h
 - **Integrating best open source practices for research**
 
 Everything will be on the repository : https://github.com/emilienschultz/phddigitalskills
+
+## Who are you ?
+
+- What is your disciplinary background ?
+- What software are you using ?
+    - Programming ? R ? Python ?
+- Are you using CLI ?
+- Are you using Git/Github ?
 
 # Command Line Interface
 
@@ -73,6 +73,9 @@ Everything will be on the repository : https://github.com/emilienschultz/phddigi
 
 > small, simple programs with clean interfaces can be combined to build larger systems
 
+## A change in practices
+
+> A lot has changed about how we program computers since those early days. The command line of the past was machine-first: little more than a REPL on top of a scripting platform. But as general-purpose interpreted languages have flourished, the role of the shell script has shrunk. **Today’s command line is human-first: a text-based UI that affords access to all kinds of tools, systems and platforms.** In the past, the editor was inside the terminal—today, the terminal is just as often a feature of the editor. And there’s been a proliferation of git-like multi-tool commands. Commands within commands, and high-level commands that perform entire workflows rather than atomic functions. [https://clig.dev/]
 
 ## Why do I have to care about CLI ?
 
@@ -95,9 +98,7 @@ Yes, but it is structured by principles that are everywhere in programming and c
 
 ![](./img/matrix-cli.jpg){fig-align="center"}
 
-##
 
-> A lot has changed about how we program computers since those early days. The command line of the past was machine-first: little more than a REPL on top of a scripting platform. But as general-purpose interpreted languages have flourished, the role of the shell script has shrunk. Today’s command line is human-first: a text-based UI that affords access to all kinds of tools, systems and platforms. In the past, the editor was inside the terminal—today, the terminal is just as often a feature of the editor. And there’s been a proliferation of git-like multi-tool commands. Commands within commands, and high-level commands that perform entire workflows rather than atomic functions. [https://clig.dev/]
 
 ## Small examples
 
@@ -172,7 +173,7 @@ It is a program that allows you to enter commands.
     - `C:\`
 - The file system is a tree 🌲
    - **Absolute path** : from the root
-       - It depends of the specific computer
+       - It depends on the computer specific organization
    - **Relative path** : from current location 
        - Each software is running from somewhere : its current location `.`
 
@@ -203,7 +204,7 @@ Use tab to facilitate completion
 :::
 
 
-## [info] Rights to access
+## [just for info] Rights to access
 
 - Each file/directory has specific access
 - Your access is determined by your status
@@ -215,15 +216,16 @@ Use tab to facilitate completion
 
 ## Third, the structure of the commands
 
-Commands have a global pattern
 
-![](./img/shell_command_syntax.svg)
+![](./img/shell_command_syntax.svg){fig-align="center" height="150px"} 
 
 - usally a command is a name
 - with options indicated with flag (-o VALUE) or full name (-option VALUE)
-- a man page `man command` or for tools an  help : `command --help`
-- and different arguments
+- and different arguments (it can be quite long and confusing)
 
+::: {.callout-note title="For instance"}
+a man page `man command` or for tools an  help : `command --help`
+:::
 
 
 ## Let's try
@@ -234,7 +236,7 @@ Commands have a global pattern
 
 Connect
 
-- Go to mes services
+- Go to services
 - New service > Jupyter-python
 - In option, Git, add repository https://github.com/emilienschultz/phddigitalskills
 - Launch the service
@@ -249,11 +251,6 @@ Connect
 ::: {.callout-tip title="Go to phddigitalskills folder / a folder"}
 :::
 
-
-::: {.callout-tip}
-## How to list the size of the files
-:::
-
 ::: {.callout-tip}
 ## Create this filesysteme
 ```
@@ -263,6 +260,12 @@ Connect
    └── raw
 ```
 :::
+
+::: {.callout-tip}
+## How to list the size of the files
+Don't hesitate to search online
+:::
+
 
 ## Corrections 1
 
@@ -361,7 +364,7 @@ for filename in *.png; do echo $filename; done
 ## Exercises 2
 
 ::: {.callout-tip}
-## Download the file with the command in the README
+## Download the xkcd pictures file
 ``` bash
 curl -L -o img.zip "https://www.dropbox.com/scl/fi/mv6ex82vws3i5ljn3ck6g/img.zip?rlkey=l7w4hgazna4bf0lfahrzuoyn2&st=j76lm525&dl=1"
 ```
@@ -372,15 +375,15 @@ curl -L -o img.zip "https://www.dropbox.com/scl/fi/mv6ex82vws3i5ljn3ck6g/img.zip
 :::
 
 ::: {.callout-tip}
-## Find all files that mention your discipline
+## Find all files that mention science
 :::
 
 ::: {.callout-tip}
-## How many strips mention "science" ?
+## How many files mention "science" ?
 :::
 
 ::: {.callout-tip}
-## Get the line in the jsonl file for a picture with grep
+## Get the line in the jsonl file for a specific picture with grep
 :::
 
 
@@ -389,29 +392,36 @@ curl -L -o img.zip "https://www.dropbox.com/scl/fi/mv6ex82vws3i5ljn3ck6g/img.zip
 ::: {.callout-tip}
 ## Unzip the data
 ``` bash
-unzip img.zip
+unzip img.zip -d xkcd
 ```
 :::
 
 ::: {.callout-tip}
-## Find all files that mention your discipline
+## Find all files that mention science
 
 ``` bash
-find img -name "*sociology*"
-``` 
-:::
-
-::: {.callout-tip}
-## Get the line in the jsonl file for a picture with frep
-``` bash
-grep $NAME dataset/*.jsonl
+find img -name "*science*"
 ``` 
 :::
 
 ::: {.callout-tip}
 ## How many strips mention "science"
+
+``` bash
+find img -iname "*science*" | wc -l
+```
+
+or
+
 ``` bash
 grep -i science dataset.jsonl | wc -l
+``` 
+:::
+
+::: {.callout-tip}
+## Get the line in the jsonl file for a specific picture with grep
+``` bash
+grep $NAME dataset/*.jsonl
 ``` 
 :::
 
@@ -452,9 +462,7 @@ convert *science*.png output.pdf
 
 For instance, **xan** https://github.com/medialab/xan
 
-> xan is a command line tool that can be used to process CSV files directly from the shell.
-> It has been written in Rust to be as performant as possible and can easily handle very large CSV files (Gigabytes). It is also able to leverage parallelism (through multithreading) to make some tasks complete as fast as your computer can allow.
-> It can easily preview, filter, slice, aggregate, sort, join CSV files, and exposes a large collection of composable commands that can be chained together to perform a wide variety of typical tasks.
+> xan is a command line tool that can be used to process CSV files directly from the shell. It has been written in Rust to be as performant as possible and **can easily handle very large CSV files (Gigabytes)**. It is also able to leverage parallelism (through multithreading) to make some tasks complete as fast as your computer can allow. It can easily preview, filter, slice, aggregate, sort, join CSV files, and exposes a large collection of composable commands that can be chained together to perform a wide variety of typical tasks.
 
 
 ## Ressources
@@ -602,15 +610,16 @@ $ git
 
 A file in a repo can be:
 
-1. Untracked: the git repo does not include it in commits, save
+1. **Untracked**: the git repo does not include it in commits, save
 any changes, etc. Default state for new files
-2. Unmodified: tracked files that have not been modified since the
+2. **Unmodified**: tracked files that have not been modified since the
 version stored in the last commit
-3. Modified: tracked files that have been modified since the
+3. **Modified**: tracked files that have been modified since the
 version stored in the last commit
-4. Staged: the changes made at the time you added the file (but
+4. **Staged**: the changes made at the time you added the file (but
 not newer changes since then) will be included in the next
 commit
+5. **Commit**: saved the snapshot as a dedicated element
 
 ##
 
@@ -632,7 +641,7 @@ commit
 
 Clear messages if possible...
 
-![](./img/git_commit_2x.png){height=800 fig-align="center"}
+![](./img/git_commit_2x.png){height="500px" fig-align="center"}
 
 [Credit: xkcd](https://xkcd.com/1296/)
 
@@ -699,9 +708,7 @@ Add a content
 - Basically : Git on cloud + services
     - Centralized repository
 - A system of rights to access (maintainer, contributor, etc.)
-- A grammar of contribution based on Git
-    - push, pull, pull request, etc.
-
+- A grammar of operations based on Git, with specificities
 :::
 
 ::: {.column width="30%"}
@@ -934,7 +941,7 @@ It is a proposed change to a codebase
 
 ## Final overview
 
-![](./img/gittotal.png){height="800px" fig-align="center"}
+![](./img/gittotal.png){height="700px" fig-align="center"}
 
 ## Exercises 4
 
