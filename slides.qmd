@@ -795,6 +795,11 @@ Let's put our slides on Github
 ::: {.callout-tip title="Create your github account"}
 :::
 
+::: {.callout-tip title="Open a issue with your name"}
+Attendance certificate
+:::
+
+
 ::: {.callout-tip title="Clone the slides repository"}
 
 https://github.com/emilienschultz/phddigitalskills
