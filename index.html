@@ -413,17 +413,17 @@
 <li>Nicolas Chopin
 <ul>
 <li>Professor of Data Sciences/Statistics/Machine Learning at ENSAE</li>
-<li>nicolas.chopin@ensae.fr</li>
+<li><em>nicolas.chopin@ensae.fr</em></li>
 </ul></li>
 <li>Émilien Schultz
 <ul>
 <li>Data scientist/research facilitator at CREST</li>
-<li>emilien.schultz@ensae.fr</li>
+<li><em>emilien.schultz@ensae.fr</em></li>
 </ul></li>
 </ul>
 </section>
 <section id="who-are-you" class="slide level2">
-<h2>Who are you</h2>
+<h2>Who are you ?</h2>
 <ul>
 <li>What is your disciplinary background ?</li>
 <li>What software are you using ?
@@ -437,8 +437,8 @@
 <section id="general-goals" class="slide level2">
 <h2>General goals</h2>
 <ul class="task-list">
-<li><label><input type="checkbox">Lay fundational practices</label></li>
-<li><label><input type="checkbox">Aim for better practices in research</label></li>
+<li><label><input type="checkbox">Establish fundamental concepts</label></li>
+<li><label><input type="checkbox">Suggest for best/better practices</label></li>
 <li><label><input type="checkbox">Discuss about your practices</label></li>
 </ul>
 </section>
@@ -471,8 +471,11 @@
 <p>A command-line interface (CLI) is a means of interacting with a computer program by inputting lines of text called command-lines</p>
 </blockquote>
 <ul>
-<li>in the past, every computer</li>
-<li>now, mainly unix systems (linux, mac…)</li>
+<li>In the past, every computer</li>
+<li>Now, mainly unix systems (linux, mac…)
+<ul>
+<li>And in programming</li>
+</ul></li>
 </ul>
 </section>
 <section id="the-great-divide" class="slide level2">
@@ -492,6 +495,12 @@
 </ul>
 <blockquote>
 <p>small, simple programs with clean interfaces can be combined to build larger systems</p>
+</blockquote>
+</section>
+<section id="a-change-in-practices" class="slide level2">
+<h2>A change in practices</h2>
+<blockquote>
+<p>A lot has changed about how we program computers since those early days. The command line of the past was machine-first: little more than a REPL on top of a scripting platform. But as general-purpose interpreted languages have flourished, the role of the shell script has shrunk. <strong>Today’s command line is human-first: a text-based UI that affords access to all kinds of tools, systems and platforms.</strong> In the past, the editor was inside the terminal—today, the terminal is just as often a feature of the editor. And there’s been a proliferation of git-like multi-tool commands. Commands within commands, and high-level commands that perform entire workflows rather than atomic functions. [https://clig.dev/]</p>
 </blockquote>
 </section>
 <section id="why-do-i-have-to-care-about-cli" class="slide level2">
@@ -518,12 +527,6 @@
 <p>Yes, but it is structured by principles that are everywhere in programming and computing interfaces.</p>
 
 <img data-src="./img/matrix-cli.jpg" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="section-1" class="slide level2">
-<h2></h2>
-<blockquote>
-<p>A lot has changed about how we program computers since those early days. The command line of the past was machine-first: little more than a REPL on top of a scripting platform. But as general-purpose interpreted languages have flourished, the role of the shell script has shrunk. Today’s command line is human-first: a text-based UI that affords access to all kinds of tools, systems and platforms. In the past, the editor was inside the terminal—today, the terminal is just as often a feature of the editor. And there’s been a proliferation of git-like multi-tool commands. Commands within commands, and high-level commands that perform entire workflows rather than atomic functions. [https://clig.dev/]</p>
-</blockquote>
-</section>
 <section id="small-examples" class="slide level2">
 <h2>Small examples</h2>
 <div class="callout callout-note callout-titled callout-style-default">
@@ -572,6 +575,7 @@
 <h2>You don’t have to master all of it</h2>
 <ul>
 <li>You will use only specific command</li>
+<li>You can search/chatgpt it</li>
 <li>And you can make different attemps : it is a <strong>dialogue</strong></li>
 </ul>
 
@@ -580,7 +584,7 @@
 <h2>To clarify a point</h2>
 <ul>
 <li>CLI is a general philosophy</li>
-<li>Specific commands can be :
+<li>Where specific commands can be :
 <ul>
 <li>Build-in commands (Unix/linux)</li>
 <li>OS specific commands (Windows, Mac)</li>
@@ -588,10 +592,23 @@
 </ul></li>
 </ul>
 <p>Using CLI mix general principles and some familiary with unix systems.</p>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>For instance always find help the same way</strong></p>
+</div>
+<div class="callout-content">
+
+</div>
+</div>
+</div>
 </section>
 <section id="first-the-console-terminal-shell" class="slide level2">
 <h2>First, the console / terminal / shell</h2>
-<p>It is a program that allows you to enter commands</p>
+<p>It is a program that allows you to enter commands.</p>
 <ul>
 <li>The place to type commands</li>
 <li>Available on unix systems (unix shell)
@@ -608,7 +625,7 @@
 <section id="second-the-file-system" class="slide level2">
 <h2>Second, the file system</h2>
 <ul>
-<li>file/directry (folder)</li>
+<li>file/directory (folder)</li>
 <li>computer filesystem organiserd from a drive/root
 <ul>
 <li><code>/</code></li>
@@ -616,7 +633,10 @@
 </ul></li>
 <li>The file system is a tree 🌲
 <ul>
-<li><strong>Absolute path</strong> : from the root</li>
+<li><strong>Absolute path</strong> : from the root
+<ul>
+<li>It depends of the specific computer</li>
+</ul></li>
 <li><strong>Relative path</strong> : from current location
 <ul>
 <li>Each software is running from somewhere : its current location <code>.</code></li>
@@ -636,6 +656,7 @@
 <li><code>cp</code> : copy a file</li>
 <li><code>mv</code> : move a file</li>
 </ul>
+<p><em>Let’s have a quick look</em></p>
 </section>
 <section id="tips" class="slide level2">
 <h2>Tips</h2>
@@ -669,8 +690,8 @@
 </div>
 </div>
 </section>
-<section id="rights-to-access" class="slide level2">
-<h2>Rights to access</h2>
+<section id="info-rights-to-access" class="slide level2">
+<h2>[info] Rights to access</h2>
 <ul>
 <li><p>Each file/directory has specific access</p></li>
 <li><p>Your access is determined by your status</p></li>
@@ -684,14 +705,27 @@
 </section>
 <section id="third-the-structure-of-the-commands" class="slide level2">
 <h2>Third, the structure of the commands</h2>
-<p>Commands have a global pattern</p>
 
-<img data-src="./img/shell_command_syntax.svg" class="r-stretch"><ul>
+<img data-src="./img/shell_command_syntax.svg" class="quarto-figure quarto-figure-center r-stretch" width="500"><ul>
 <li>usally a command is a name</li>
 <li>with options indicated with flag (-o VALUE) or full name (-option VALUE)</li>
-<li>a man page <code>man command</code> or for tools an help : <code>command --help</code></li>
-<li>and different arguments</li>
+<li>and different arguments (it can be quite long and confusing)</li>
 </ul>
+<div title="For instance">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>For instance</strong></p>
+</div>
+<div class="callout-content">
+<p>a man page <code>man command</code> or for tools an help : <code>command --help</code></p>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="lets-try" class="slide level2">
 <h2>Let’s try</h2>
@@ -760,7 +794,7 @@
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Create this filesystme</strong></p>
+<p><strong>Create this filesysteme</strong></p>
 </div>
 <div class="callout-content">
 <pre><code>2024-11-06/
@@ -831,8 +865,8 @@
 </div>
 </div>
 </section>
-<section id="a-list-of-commands" class="slide level2">
-<h2>A list of commands</h2>
+<section id="more-useful-commands" class="slide level2">
+<h2>More useful commands</h2>
 <ul>
 <li><code>echo</code> : print text</li>
 <li><code>tail</code> and <code>head</code> : display the beginning / end of a file</li>
@@ -852,8 +886,8 @@
 <p>grep‘s real power doesn’t come from its options, though; it comes from the fact that patterns can include wildcards. (The technical name for these is regular expressions, which is what the ’re’ in ‘grep’ stands for.)</p>
 </blockquote>
 </section>
-<section id="more" class="slide level2">
-<h2>More !</h2>
+<section id="more-just-to-know-they-exist" class="slide level2">
+<h2>More (just to know they exist) !</h2>
 <ul>
 <li><code>ps</code> : see current processes</li>
 <li><code>kill</code>: kill a process</li>
@@ -866,12 +900,14 @@
 <li><code>curl</code> : download files</li>
 </ul>
 </section>
-<section id="from-one-to-multiple-commands-the-pipe" class="slide level2">
-<h2>From one to multiple commands : the pipe</h2>
+<section id="successive-commands-the-pipe" class="slide level2">
+<h2>Successive commands : the pipe</h2>
 <ul>
 <li>output on files <code>&gt;</code> (w) and <code>&gt;&gt;</code> (a)</li>
 <li>pipe <code>|</code></li>
 </ul>
+<p>The number of lines :</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href=""></a><span class="fu">ls</span> <span class="at">-l</span> <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -896,10 +932,12 @@
 <li><code>bash script.sh</code></li>
 </ul></li>
 </ul>
-<pre><code>for filename in *.png
-do
-    cp $filename xkcd-$filename
-done</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href=""></a><span class="cf">for</span> filename <span class="kw">in</span> <span class="pp">*</span>.png</span>
+<span id="cb10-2"><a href=""></a><span class="cf">do</span></span>
+<span id="cb10-3"><a href=""></a>    <span class="fu">cp</span> <span class="va">$filename</span> xkcd-<span class="va">$filename</span></span>
+<span id="cb10-4"><a href=""></a><span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>or</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href=""></a><span class="cf">for</span> filename <span class="kw">in</span> <span class="pp">*</span>.png<span class="kw">;</span> <span class="cf">do</span> <span class="bu">echo</span> <span class="va">$filename</span><span class="kw">;</span> <span class="cf">done</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="exercises-2" class="slide level2">
 <h2>Exercises 2</h2>
@@ -912,7 +950,7 @@ done</code></pre>
 <p><strong>Download the file with the command in the README</strong></p>
 </div>
 <div class="callout-content">
-<p>curl -L -o img.zip “https://www.dropbox.com/scl/fi/mv6ex82vws3i5ljn3ck6g/img.zip?rlkey=l7w4hgazna4bf0lfahrzuoyn2&amp;st=j76lm525&amp;dl=1”</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href=""></a><span class="ex">curl</span> <span class="at">-L</span> <span class="at">-o</span> img.zip <span class="st">"https://www.dropbox.com/scl/fi/mv6ex82vws3i5ljn3ck6g/img.zip?rlkey=l7w4hgazna4bf0lfahrzuoyn2&amp;st=j76lm525&amp;dl=1"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -980,7 +1018,7 @@ done</code></pre>
 <p><strong>Unzip the data</strong></p>
 </div>
 <div class="callout-content">
-<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href=""></a><span class="fu">unzip</span> img.zip</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href=""></a><span class="fu">unzip</span> img.zip</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -993,7 +1031,7 @@ done</code></pre>
 <p><strong>Find all files that mention your discipline</strong></p>
 </div>
 <div class="callout-content">
-<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href=""></a><span class="fu">find</span> img <span class="at">-name</span> <span class="st">"*sociology*"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href=""></a><span class="fu">find</span> img <span class="at">-name</span> <span class="st">"*sociology*"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1006,7 +1044,7 @@ done</code></pre>
 <p><strong>Get the line in the jsonl file for a picture with frep</strong></p>
 </div>
 <div class="callout-content">
-<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href=""></a><span class="fu">grep</span> <span class="va">$NAME</span> dataset/<span class="pp">*</span>.jsonl</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href=""></a><span class="fu">grep</span> <span class="va">$NAME</span> dataset/<span class="pp">*</span>.jsonl</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1019,7 +1057,7 @@ done</code></pre>
 <p><strong>How many strips mention “science”</strong></p>
 </div>
 <div class="callout-content">
-<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href=""></a><span class="fu">grep</span> <span class="at">-i</span> science dataset.jsonl <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href=""></a><span class="fu">grep</span> <span class="at">-i</span> science dataset.jsonl <span class="kw">|</span> <span class="fu">wc</span> <span class="at">-l</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1035,8 +1073,8 @@ done</code></pre>
 <li>Windows : choco</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href=""></a><span class="fu">sudo</span> apt-get update</span>
-<span id="cb14-2"><a href=""></a><span class="fu">sudo</span> apt-get install XXXX</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href=""></a><span class="fu">sudo</span> apt-get update</span>
+<span id="cb17-2"><a href=""></a><span class="fu">sudo</span> apt-get install XXXX</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="exercises-3" class="slide level2">
 <h2>Exercises 3</h2>
@@ -1065,9 +1103,9 @@ done</code></pre>
 <p><strong>Transform a set of pictures in a pdf</strong></p>
 </div>
 <div class="callout-content">
-<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href=""></a><span class="fu">sudo</span> apt-get update</span>
-<span id="cb15-2"><a href=""></a><span class="fu">sudo</span> apt-get install imagemagick</span>
-<span id="cb15-3"><a href=""></a><span class="ex">convert</span> <span class="pp">*</span>science<span class="pp">*</span>.png output.pdf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href=""></a><span class="fu">sudo</span> apt-get update</span>
+<span id="cb18-2"><a href=""></a><span class="fu">sudo</span> apt-get install imagemagick</span>
+<span id="cb18-3"><a href=""></a><span class="ex">convert</span> <span class="pp">*</span>science<span class="pp">*</span>.png output.pdf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -1076,7 +1114,7 @@ done</code></pre>
 <h2>Powerful tools exist</h2>
 <p>For instance, <strong>xan</strong> https://github.com/medialab/xan</p>
 <blockquote>
-<p>xan is a command line tool that can be used to process CSV files directly from the shell. It has been written in Rust to be as performant as possible and can easily handle very large CSV files (Gigabytes). It is also able to leverage parallelism (through multithreading) to make some tasks complete as fast as your computer can allow. It can easily preview, filter, slice, aggregate, sort, join CSV files, and exposes a large collection of composable commands that can be chained together to perform a wide variety of typical tasks.</p>
+<p>xan is a command line tool that can be used to process CSV files directly from the shell. It has been written in Rust to be as performant as possible and <strong>can easily handle very large CSV files (Gigabytes)</strong>. It is also able to leverage parallelism (through multithreading) to make some tasks complete as fast as your computer can allow. It can easily preview, filter, slice, aggregate, sort, join CSV files, and exposes a large collection of composable commands that can be chained together to perform a wide variety of typical tasks.</p>
 </blockquote>
 </section>
 <section id="ressources" class="slide level2">
@@ -1301,7 +1339,7 @@ done</code></pre>
 <li>Staged: the changes made at the time you added the file (but not newer changes since then) will be included in the next commit</li>
 </ol>
 </section>
-<section id="section-2" class="slide level2">
+<section id="section-1" class="slide level2">
 <h2></h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -1362,7 +1400,7 @@ done</code></pre>
 </ul></li>
 </ul>
 </section>
-<section id="section-3" class="slide level2">
+<section id="section-2" class="slide level2">
 <h2></h2>
 <div title="Code &amp; Data">
 <div class="callout callout-important callout-titled callout-style-default">
@@ -1576,6 +1614,14 @@ done</code></pre>
 </div>
 </div>
 </section>
+<section id="fork-it" class="slide level2">
+<h2>Fork it</h2>
+<p>A fork is a copy of a repository (but still connected).</p>
+<ul>
+<li>Experiment with a project independently.</li>
+<li>Propose Changes to the original repository through pull requests.</li>
+</ul>
+</section>
 <section id="complete-worklow" class="slide level2" style="text-align: center;">
 <h2>Complete worklow</h2>
 
@@ -1654,6 +1700,7 @@ done</code></pre>
 <h2>Complexity of 3 levels &amp; conflicts</h2>
 <ul>
 <li>Online repo vs.&nbsp;local repos</li>
+<li>Importance to keep it sync : <code>pull</code></li>
 <li>Risks of conflicts
 <ul>
 <li>Local repo delayed from origin</li>
@@ -1759,7 +1806,7 @@ done</code></pre>
 </section>
 <section id="advanced-pull-requests" class="slide level2">
 <h2>[Advanced] pull requests</h2>
-<p>It is a proposed change to a codebaseWhen a pull request is created</p>
+<p>It is a proposed change to a codebase</p>
 <ul>
 <li>Made on an independant branch</li>
 <li>Proposed to review for the repository</li>
@@ -1774,8 +1821,8 @@ done</code></pre>
 </figure>
 </div>
 </section>
-<section id="exercises-3-2" class="slide level2">
-<h2>Exercises 3</h2>
+<section id="exercises-4" class="slide level2">
+<h2>Exercises 4</h2>
 <div title="Suggest me modification for this course">
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
@@ -1797,6 +1844,15 @@ done</code></pre>
 </div>
 </div>
 </section>
+<section id="last-comment-licences" class="slide level2">
+<h2>Last comment : licences</h2>
+<p>Even if your repository is public, it isn’t necessarily open-source.</p>
+<ul>
+<li>Define the license to clarify reuse, modification, and distribution permissions.</li>
+<li>Science-Friendly licenses: Open Source Initiative (OSI)-approved like MIT, Apache 2.0, or GPL</li>
+<li>Documentation: Provide a LICENSE file and mention the license in your README to ensure transparency for collaborators and users.</li>
+</ul>
+</section>
 <section id="conclusion-for-your-research" class="slide level2">
 <h2>Conclusion : for your research</h2>
 <ul>
@@ -1808,6 +1864,7 @@ done</code></pre>
 <li>Open code foster reproducibility</li>
 </ul></li>
 </ul>
+<p><strong>You need to start practicing, we are here to help</strong></p>
 <p><strong>Practice</strong></p>
 </section>
 <section id="ressources-1" class="slide level2">
@@ -1819,10 +1876,18 @@ done</code></pre>
 <li><a href="https://inseefrlab.github.io/formation-bonnes-pratiques-git-R">Good practices for statistical projects with R &amp; Git (INSEE)</a></li>
 <li><a href="https://git-scm.com/book/en/v2">Git Reference guidelines</a></li>
 <li><a href="https://programminghistorian.org/en/lessons/retired/getting-started-with-github-desktop">An Introduction to Version Control Using GitHub Desktop</a></li>
+<li>Perez-Riverol, Yasset et al.&nbsp;«&nbsp;Ten Simple Rules for Taking Advantage of Git and GitHub&nbsp;». Édité par Scott Markel. PLOS Computational Biology 12, nᵒ 7 (14 juillet 2016): e1004947. https://doi.org/10.1371/journal.pcbi.1004947.</li>
 </ul>
 </section></section>
 <section id="break" class="title-slide slide level1 center">
 <h1>Break</h1>
+<!--
+
+Next step :
+- tags
+- continuous integration
+
+-->
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
