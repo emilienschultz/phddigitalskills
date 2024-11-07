@@ -913,6 +913,9 @@ Create a branch : `git branch NAME` or `git checkout -b NAME`, and change with `
 
 *Branches are cheap and easy, so this is a good way to try something out.*
 
+## How to update a forked reporsitory from the main branch
+
+If i remember correctly it was using git pull upstream (?)
 
 ## [Advanced] How to merge different branches 
 
